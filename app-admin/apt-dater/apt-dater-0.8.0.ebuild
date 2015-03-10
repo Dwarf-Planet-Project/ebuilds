@@ -12,7 +12,7 @@ SRC_URI="https://github.com/hoehnp/apt-dater/archive/v${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="amd64 ~x86"
 IUSE="procmail lockfile-progs tcl xml"
 
 DEPEND="
