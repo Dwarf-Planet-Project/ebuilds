@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<repositories version="1.0">
+        <repo priority="50" quality="unstable" status="unofficial">
+                        <name>Dwarf-Planet</name>
+                        <description>ebuilds by the Dwarf Planet Project</description>
+                        <homepage>https://github.com/Dwarf-Planet-Project/ebuilds</homepage>
+                        <owner>
+                                <email>hoehnp@gmx.de</email>
+                        </owner>
+                        <source type="git">https://github.com/Dwarf-Planet-Project/ebuilds.git</source>
+        </repo>
+</repositories>
+ 
