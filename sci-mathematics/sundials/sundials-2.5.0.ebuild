@@ -33,6 +33,7 @@ src_compile() {
 
 src_install() {
 
-	emake install " --prefix=/${D}"
+#	emake install " --prefix=/${D}"
+	einstall
 
 }
