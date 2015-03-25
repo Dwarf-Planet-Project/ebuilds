@@ -54,5 +54,5 @@ src_configure() {
 }
 
 src_compile() {
-	emake
+	emake DESTDIR="${D}"
 }
