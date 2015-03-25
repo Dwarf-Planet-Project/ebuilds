@@ -33,6 +33,6 @@ insinto /etc
 newins "${T}"/eclipserc-bin-${SLOT} eclipserc-bin-${SLOT}
 newbin "${T}"/eclipse-bin-${SLOT} eclipse-bin-${SLOT}
 make_desktop_entry "eclipse-bin-${SLOT}" "Eclipse ${PV} (bin)" "${dest}/icon.xpm"a
-ln -s /usr/bin/eclipse-bin-${SLOT} /usr/bin/eclipse
+dosym /usr/bin/eclipse-bin-${SLOT} /usr/bin/eclipse
 }
 
