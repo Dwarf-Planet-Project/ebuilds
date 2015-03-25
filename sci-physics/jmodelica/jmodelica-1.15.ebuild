@@ -11,7 +11,7 @@ SRC_URI=""
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
-IUSE="superlu ipopt eclipse cppad"
+IUSE="superlu ipopt eclipse cppad sundials"
 
 DEPEND="superlu? ( sci-libs/superlu )
         ipopt? ( sci-libs/ipopt )
@@ -48,6 +48,10 @@ src_configure() {
 		myopts+="$(use_with cppad)=/usr/include "
 	fi
 
+	if (use !sundials) then
+		myopts+="$(use_with sundials)"
+	fi
+	
 #	myopts+="--prefix=${D}"
 
 	econf $myopts
