@@ -33,6 +33,6 @@ src_compile() {
 
 src_install() {
 
-	emake DESTDIR="${D}" install
+	emake install " --prefix=/${D}"
 
 }
