@@ -29,5 +29,27 @@ src_unpack() {
 }
 
 src_configure() {
+	myopts=""
+
+	if (use ipopt) then
+		myopts+="$(use_with ipopt)=/usr "
+	fi
+
+    if (use superlu) then
+		myopts+="$(use_with superlu) "
+    fi
+
+	if (use eclipse) then
+		myopts+="$(use_with eclipse)=/usr/bin "
+	fi
 	
+	if (use cppad) then
+		myopts+="$(use_with cppad)=/usr/include"
+	fi
+
+	econf $myopts
+}
+
+src_compile() {
+	emake
 }
