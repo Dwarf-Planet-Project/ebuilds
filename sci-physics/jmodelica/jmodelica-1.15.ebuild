@@ -48,7 +48,7 @@ src_configure() {
 		myopts+="$(use_with cppad)=/usr/include "
 	fi
 
-	myopts+="--prefix=${D}"
+#	myopts+="--prefix=${D}"
 
 	econf $myopts
 }
