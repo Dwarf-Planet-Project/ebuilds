@@ -21,7 +21,7 @@ src_unpack() {
 
 src_configure() {
 
-	econf  
+	econf "--prefix ${D}" 
 		  
 }
 
