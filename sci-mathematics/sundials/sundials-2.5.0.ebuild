@@ -21,7 +21,7 @@ src_unpack() {
 
 src_configure() {
 
-	econf "--prefix=${D}/usr" 
+	econf "--prefix=${D}usr" 
 		  
 }
 
