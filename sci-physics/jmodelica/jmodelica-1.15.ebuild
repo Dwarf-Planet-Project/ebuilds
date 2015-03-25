@@ -16,7 +16,8 @@ IUSE="superlu ipopt eclipse cppad"
 DEPEND="superlu? ( sci-libs/superlu )
         ipopt? ( sci-libs/ipopt )
 		eclipse? ( dev-util/eclipse-sdk-bin  )
-		cppad? ( sci-libs/coinor-cppad )"
+		cppad? ( sci-libs/coinor-cppad )
+		dev-python/cython"
 RDEPEND="${DEPEND}"
 
 inherit subversion 
