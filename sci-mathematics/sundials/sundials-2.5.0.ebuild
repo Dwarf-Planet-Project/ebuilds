@@ -21,7 +21,7 @@ src_unpack() {
 
 src_configure() {
 
-	econf "--prefix=${D}usr" 
+	econf  
 		  
 }
 
@@ -33,6 +33,6 @@ src_compile() {
 
 src_install() {
 
-	emake install
+	emake DESTDIR="${D}" install
 
 }
