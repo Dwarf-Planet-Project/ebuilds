@@ -24,7 +24,12 @@ REDEPEND="${DEPEND} make cmake"
 #		peo? ( dev-libs/libxml2 )"
 #RDEPEND="${DEPEND}"
 
+src_prepare() {
+	mv work/ParadisEO-${PV} work/paradiseo-${PV}
+}
+
 src_configure() {
+
 	local mycmakeargs=(
 	                	-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
 	)
