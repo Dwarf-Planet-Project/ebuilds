@@ -41,11 +41,15 @@ src_configure() {
 
 src_compile() {
 	${WORKDIR}/paradiseo-${PV}_build
-	#cmake-utils_src_compile
+	cmake-utils_src_compile
+}
+
+src_test() {
+	cmake-utils_src_test
 }
 
 src_install() {
 
-	emake DESTDIR="${D}" install
+	cmake-utils_src_install
 
 }
