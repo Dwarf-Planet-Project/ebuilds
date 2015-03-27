@@ -4,6 +4,8 @@
 
 EAPI=5
 
+inherit cmake-utils
+
 DESCRIPTION="SUite of Nonlinear and DIfferential/ALgebraic equation Solvers"
 HOMEPAGE="http://computation.llnl.gov/casc/sundials/main.html"
 SRC_URI="http://ftp.mcs.anl.gov/pub/petsc/externalpackages/sundials-${PV}.tar.gz"
@@ -21,19 +23,35 @@ src_unpack() {
 
 src_configure() {
 
-	econf  
+	#econf F77=gfortran --prefix=/usr --disable-mpi --enable-shared --disable-static
+
+    local mycmakeargs=(
+	                   -DCMAKE_INSTALL_PREFIX=/usr F77=gfortran --disable-mpi --enable-shared --disable-static
+	)
+
+	 cmake-utils_src_configure
+
 		  
 }
 
 src_compile() {
 
-	emake 
+#	emake 
+	 cmake-utils_src_compile
+
+}
+
+src_test() {
+
+	 cmake-utils_src_test
 
 }
 
 src_install() {
 
 #	emake install " --prefix=/${D}"
-	einstall
+#	einstall
+
+	 cmake-utils_src_install
 
 }
