@@ -7,18 +7,40 @@ inherit cmake-utils
 
 DESCRIPTION="A Software Framework for Metaheuristics"
 HOMEPAGE="http://paradiseo.gforge.inria.fr"
-SRC_URI="https://gforge.inria.fr/frs/download.php/31732/ParadisEO-${PV}.tar.gz
-         peo? (https://gforge.inria.fr/frs/download.php/31739/peo-${PV}.tar.gz )"
+SRC_URI="https://gforge.inria.fr/frs/download.php/31732/ParadisEO-${PV}.tar.gz"
 
 LICENSE="CeCILL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="examples coverage doc smp peo"
+#IUSE="examples coverage doc smp peo"
 
-DEPEND="doc? ( app-doc/doxygen )
-	    coverage? ( dev-util/lcov )
-		smp? ( >=sys-devel/gcc-4.7.0 )
-		peo? ( dev-libs/libxml2 )"
-RDEPEND="${DEPEND}"
+IUSE=""
 
+DEPEND=""
+REDEPEND="${DEPEND} make cmake"
+#DEPEND="doc? ( app-doc/doxygen )
+#	    coverage? ( dev-util/lcov )
+#		smp? ( >=sys-devel/gcc-4.7.0 )
+#		peo? ( dev-libs/libxml2 )"
+#RDEPEND="${DEPEND}"
 
+src_configure() {
+	local mycmakeargs=(
+	                	-DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
+	)
+
+	cmake-utils_src_configure
+
+}
+
+src_compile() {
+
+	emake 
+
+}
+
+src_install() {
+
+	emake DESTDIR="${D}" install
+
+}
