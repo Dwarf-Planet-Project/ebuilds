@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit cmake-utils
+inherit cmake-utils libtool
 
 DESCRIPTION="SUite of Nonlinear and DIfferential/ALgebraic equation Solvers"
 HOMEPAGE="http://computation.llnl.gov/casc/sundials/main.html"
@@ -51,7 +51,7 @@ src_install() {
 
 #	emake install " --prefix=/${D}"
 #	einstall
-
+	elibtoolize
 	 cmake-utils_src_install
 
 }
