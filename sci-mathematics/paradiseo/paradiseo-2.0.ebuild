@@ -24,8 +24,9 @@ REDEPEND="${DEPEND} make cmake"
 #		peo? ( dev-libs/libxml2 )"
 #RDEPEND="${DEPEND}"
 
-src_prepare() {
-	mv work/ParadisEO-${PV} work/paradiseo-${PV}
+src_unpack() {
+	unpack ParadisEO-${PV}.tar.gz
+	mv ParadisEO-${PV} paradiseo-${PV}	
 }
 
 src_configure() {
@@ -39,9 +40,8 @@ src_configure() {
 }
 
 src_compile() {
-
-	emake 
-
+	${WORKDIR}/paradiseo-${PV}_build
+	#cmake-utils_src_compile
 }
 
 src_install() {
