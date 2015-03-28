@@ -26,7 +26,7 @@ RDEPEND="${DEPEND}
 		 sci-mathematics/lpsolve 
 		 dev-db/sqlite 
 		 net-misc/omniORB  
-		 x11-libs/qwt_6 
+		 x11-libs/qwt:6 
 		 sci-libs/blas-reference 
 		 sci-libs/lapack-reference 
 		 dev-libs/ocl-icd  
