@@ -20,7 +20,8 @@ DEPEND=" <dev-java/antlr-3.0
 		 dev-java/icedtea:7 
 		 dev-libs/boost 
 		 sys-devel/autoconf 
-		 sci-mathematics/paradiseo-bin"
+		 sci-mathematics/paradiseo-bin
+		 dev-util/nvidia-cuda-toolkit"
 
 RDEPEND="${DEPEND} 
 		 sci-mathematics/lpsolve 
@@ -30,7 +31,6 @@ RDEPEND="${DEPEND}
 		 sci-libs/blas-reference 
 		 sci-libs/lapack-reference 
 		 dev-libs/ocl-icd  
-		 media-libs/gegl
 		 sci-mathematics/sundials 
 		 sci-libs/metis"
 # rml-mmc-999
@@ -45,7 +45,12 @@ src_unpack() {
 
 
 src_configure() {
-	 autotools-utils_src_configure --with-paradiseo --with-METIS=/usr/lib/ --with-omniORB=/usr/lib/
+	local myeconfargs=(
+					--with-paradiseo
+					--with-METIS=/usr/lib/
+					--with-omniORB=/usr/lib/
+	)
+	 autotools-utils_src_configure
 }
 
 
