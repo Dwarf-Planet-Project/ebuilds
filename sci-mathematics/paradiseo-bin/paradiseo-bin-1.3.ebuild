@@ -22,11 +22,11 @@ REDEPEND="${DEPEND} make cmake"
 
 src_unpack() {
 
-	mkdir paradiseo-${PV}
-	cd paradiseo-${PV}
-	echo $PN
+	mkdir ${PN-PV}
+	cd ${PN-PV}
+	#echo $PN
 	localbuild=${PN%-bin}
-	echo $localbuild
+	#echo $localbuild
 	wget -O paradiseo-${PV}.deb "http://build.openmodelica.org/apt/pool/contrib-wheezy/${localbuild}_${PV}-beta2-3_${ARCH}.deb" || die
 	unpack_deb  ./paradiseo-${PV}.deb
 
