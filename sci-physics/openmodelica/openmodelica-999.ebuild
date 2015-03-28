@@ -45,7 +45,7 @@ src_unpack() {
 
 
 src_configure() {
-	 autotools-utils_src_configure --with
+	 autotools-utils_src_configure --with-paradiseo --with-METIS=/usr/lib/ --with-omniORB=/usr/lib/
 }
 
 
