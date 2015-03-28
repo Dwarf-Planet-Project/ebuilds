@@ -26,7 +26,7 @@ src_configure() {
 	#econf F77=gfortran --prefix=/usr --disable-mpi --enable-shared --disable-static
 
     local mycmakeargs=(
-	                   -DCMAKE_INSTALL_PREFIX=/usr F77=gfortran --disable-mpi --enable-shared --disable-static -fPIC
+	                   -DCMAKE_INSTALL_PREFIX=/usr F77=gfortran --disable-mpi --enable-shared --disable-static -DCMAKE_POSITION_INDEPENDENT_CODE=ON
 	)
 
 	 cmake-utils_src_configure
