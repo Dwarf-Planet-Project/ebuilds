@@ -37,14 +37,20 @@ RDEPEND="${DEPEND}
 
 ESVN_REPO_URI="https://openmodelica.org/svn/OpenModelica/trunk/"
 
+AUTOTOOLS_IN_SOURCE_BUILD=1
 
 src_unpack() {
 
 	subversion_src_unpack
 }
 
+src_prepare() {
+	autotools-utils_src_prepare
+
+}
 
 src_configure() {
+	pwd
 	local myeconfargs=(
 					--with-paradiseo
 					--with-METIS=/usr/lib/
