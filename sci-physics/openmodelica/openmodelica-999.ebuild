@@ -30,7 +30,7 @@ RDEPEND="${DEPEND}
 		 sci-libs/blas-reference 
 		 sci-libs/lapack-reference 
 		 dev-libs/ocl-icd  
-		 dev-utils/opencl-headers 
+		 dev-util/opencl-headers 
 		 sci-mathematics/sundials 
 		 sci-libs/metis"
 # rml-mmc-999
