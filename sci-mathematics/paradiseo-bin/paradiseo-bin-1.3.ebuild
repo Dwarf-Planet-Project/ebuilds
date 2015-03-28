@@ -22,8 +22,8 @@ REDEPEND="${DEPEND} make cmake"
 
 src_unpack() {
 
-	mkdir ${PN-PV}
-	cd ${PN-PV}
+	mkdir ${PN}-${PV}
+	cd ${PN}-${PV}
 	#echo $PN
 	localbuild=${PN%-bin}
 	#echo $localbuild
