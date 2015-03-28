@@ -35,14 +35,9 @@ src_unpack() {
 src_install() {
 
 	dodir /usr/lib/paradiseo
-	insinto /usr/lib/paradiseo
-	dolib.a usr/lib/paradiseo/libcma.a      
-	dolib.a usr/lib/paradiseo/libeo.a
-	dolib.a usr/lib/paradiseo/libeomoo.a
-	dolib.a usr/lib/paradiseo/libeoutils.a
-	dolib.a usr/lib/paradiseo/libes.a
-	dolib.a usr/lib/paradiseo/libga.a
-	dolib.a usr/lib/paradiseo/libmoeo.a 
+	cd usr/lib/paradiseo
+	cp -r ./* ../../../../../image/usr/lib/paradiseo/
+	cd ../../..
 	dodir /usr/include/paradiseo/
 	cd usr/include/paradiseo/
 	cp -r ./*  ../../../../../image/usr/include/paradiseo/
