@@ -17,7 +17,7 @@ IUSE=""
 
 DEPEND=" <dev-java/antlr-3.0 
          dev-vcs/subversion 
-		 dev-java/icedtea_7 
+		 dev-java/icedtea:7 
 		 dev-libs/boost 
 		 sys-devel/autoconf 
 		 sci-mathematics/paradiseo-bin"
