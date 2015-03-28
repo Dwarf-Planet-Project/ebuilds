@@ -31,12 +31,10 @@ src_configure() {
 
 	 cmake-utils_src_configure
 
-		  
 }
 
 src_compile() {
 
-#	emake 
 	 cmake-utils_src_compile
 
 }
@@ -49,9 +47,7 @@ src_test() {
 
 src_install() {
 
-#	emake install " --prefix=/${D}"
-#	einstall
 	elibtoolize
-	 cmake-utils_src_install
+	cmake-utils_src_install
 
 }

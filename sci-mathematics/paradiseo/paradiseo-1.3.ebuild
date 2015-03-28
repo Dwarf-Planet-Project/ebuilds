@@ -10,7 +10,7 @@ SRC_URI="https://gforge.inria.fr/frs/download.php/27238/paradiseo-${PV}-beta2.ta
 
 LICENSE="CeCILL-2"
 SLOT="0"
-KEYWORDS="amd64"
+KEYWORDS=""
 #IUSE="examples coverage doc smp peo"
 
 IUSE=""
