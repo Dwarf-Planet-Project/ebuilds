@@ -19,17 +19,15 @@ IUSE=""
 
 DEPEND=""
 REDEPEND="${DEPEND} make cmake"
-#DEPEND="doc? ( app-doc/doxygen )
-#	    coverage? ( dev-util/lcov )
-#		smp? ( >=sys-devel/gcc-4.7.0 )
-#		peo? ( dev-libs/libxml2 )"
-#RDEPEND="${DEPEND}"
 
 src_unpack() {
 
 	mkdir paradiseo-${PV}
 	cd paradiseo-${PV}
-	wget -O paradiseo-${PV}.deb "http://build.openmodelica.org/apt/pool/contrib-wheezy/${PN}_${PV}-beta2-3_${ARCH}.deb" || die
+	echo $PN
+	localbuild=${PN%-bin}
+	echo $localbuild
+	wget -O paradiseo-${PV}.deb "http://build.openmodelica.org/apt/pool/contrib-wheezy/${localbuild}_${PV}-beta2-3_${ARCH}.deb" || die
 	unpack_deb  ./paradiseo-${PV}.deb
 
 }
