@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit subversion autotools-utils
+inherit subversion 
 
 DESCRIPTION="The Open Source Modelica Compiler"
 HOMEPAGE="https://openmodelica.org"
@@ -21,7 +21,8 @@ DEPEND=" <dev-java/antlr-3.0
 		 dev-libs/boost 
 		 sys-devel/autoconf 
 		 sci-mathematics/paradiseo-bin
-		 dev-util/nvidia-cuda-toolkit"
+		 dev-util/nvidia-cuda-toolkit
+		 sys-devel/autoconf-wrapper"
 
 RDEPEND="${DEPEND} 
 		 sci-mathematics/lpsolve 
@@ -44,32 +45,23 @@ src_unpack() {
 	subversion_src_unpack
 }
 
-src_prepare() {
-	autotools-utils_src_prepare
-
-}
-
 src_configure() {
-	pwd
+	autoconf
 	local myeconfargs=(
 					--with-paradiseo
 					--with-METIS=/usr/lib/
 					--with-omniORB=/usr/lib/
 	)
-	 autotools-utils_src_configure
+	econf $myeconfargs
 }
 
 
 src_compile() {
-	cmake-utils_src_compile
-}
-
-src_test() {	
-	cmake-utils_src_test
+	emake
 }
 
 src_install() {
-	cmake-utils_src_install
+	emake install	
 }
 
 
