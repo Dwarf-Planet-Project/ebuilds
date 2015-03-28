@@ -51,6 +51,7 @@ src_configure() {
 					--with-paradiseo
 					--with-METIS=/usr/lib/
 					--with-omniORB=/usr/lib/
+					-lpthread
 	)
 	econf $myeconfargs
 }
