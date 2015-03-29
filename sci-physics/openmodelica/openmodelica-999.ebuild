@@ -52,6 +52,7 @@ src_configure() {
 					--with-METIS=/usr/lib/
 					--with-omniORB=/usr/lib/
 					-lpthread
+					--disable-modelica3d
 	)
 	econf $myeconfargs
 }
