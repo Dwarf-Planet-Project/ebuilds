@@ -49,14 +49,14 @@ src_configure() {
 	fi
 
 	if (use !sundials) then
-		myopts+="$(use_with sundials)"
+		myopts+="$(use_with sundials) "
 	fi
 	
-#	myopts+="--prefix=${D}"
+	myopts+="--prefix=${D}"
 
 	econf $myopts
 }
 
 src_compile() {
-	emake DESTDIR="${D}"
+	emake #DESTDIR="${D}"
 }
