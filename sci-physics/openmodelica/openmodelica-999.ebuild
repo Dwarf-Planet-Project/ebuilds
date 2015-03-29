@@ -59,7 +59,7 @@ src_configure() {
 
 
 src_compile() {
-	emake -j4 omc
+	emake 
 }
 
 src_install() {
