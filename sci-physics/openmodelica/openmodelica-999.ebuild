@@ -44,6 +44,8 @@ ESVN_REPO_URI="https://openmodelica.org/svn/OpenModelica/trunk/"
 
 AUTOTOOLS_IN_SOURCE_BUILD=1
 
+LD_LIBRARY_PATH=/var/tmp/portage/sci-physics/openmodelica-999/work/openmodelica-999/build/bin/../lib/omc/:$LD_LIBRARY_PATH
+
 src_unpack() {
 
 	subversion_src_unpack
