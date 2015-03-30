@@ -19,6 +19,7 @@ DEPEND=" <dev-java/antlr-3.0
          dev-vcs/subversion 
 		 dev-java/icedtea:7 
 		 dev-libs/boost 
+		 dev-libs/boehm-gc[threads]
 		 sys-devel/autoconf 
 		 sci-mathematics/paradiseo-bin
 		 dev-util/nvidia-cuda-toolkit
@@ -51,7 +52,6 @@ src_configure() {
 					--with-paradiseo
 					--with-METIS=/usr/lib/
 					--with-omniORB=/usr/lib/
-					-lpthread
 					--disable-modelica3d
 	)
 	econf $myeconfargs
