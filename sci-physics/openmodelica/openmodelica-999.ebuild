@@ -25,7 +25,8 @@ DEPEND=" <dev-java/antlr-3.0
 		 dev-util/nvidia-cuda-toolkit
 		 sys-devel/autoconf-wrapper
 		 sci-libs/lis
-		 x11-libs/gtkglext"
+		 x11-libs/gtkglext
+		 dev-games/openscenegraph"
 
 RDEPEND="${DEPEND} 
 		 sci-mathematics/lpsolve 
