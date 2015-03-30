@@ -39,7 +39,9 @@ RDEPEND="${DEPEND}
 		 sci-libs/lapack-reference 
 		 dev-libs/ocl-icd  
 		 sci-mathematics/sundials 
-		 sci-libs/metis"
+		 sci-libs/metis
+		 sci-libs/ipopt
+		 sci-libs/umfpack"
 
 ESVN_REPO_URI="https://openmodelica.org/svn/OpenModelica/trunk/"
 
@@ -65,11 +67,11 @@ src_configure() {
 
 
 src_compile() {
-	eautomake 
+	emake 
 }
 
 src_install() {
-	eautomake DESTDIR="${D}" install	
+	emake DESTDIR="${D}" install	
 }
 
 
