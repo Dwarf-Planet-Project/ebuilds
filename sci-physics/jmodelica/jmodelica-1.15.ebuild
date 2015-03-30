@@ -28,7 +28,6 @@ DEPEND="superlu? ( sci-libs/superlu )
 		dev-python/matplotlib
 		dev-python/lxml
 		dev-python/nose
-		dev-python/jpype 
 		"
 RDEPEND="${DEPEND}"
 
