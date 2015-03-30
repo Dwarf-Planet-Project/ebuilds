@@ -8,6 +8,9 @@ DESCRIPTION="an extensible Modelica-based open source platform for optimization,
 HOMEPAGE="jmodelica.org"
 SRC_URI=""
 
+CFLAGS="-fPIC"
+CXXFLAGS="-fPIC"
+
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
