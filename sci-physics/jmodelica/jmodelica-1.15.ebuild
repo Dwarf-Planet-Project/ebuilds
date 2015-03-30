@@ -21,7 +21,7 @@ DEPEND="superlu? ( sci-libs/superlu )
 		dev-vcs/subversion
 		dev-python/ipython
 		dev-util/cmake
-		dev-lang/swig:2
+		dev-lang/swig:0
 		dev-java/ant-core
 		dev-python/numpy
 		dev-python/scipy
