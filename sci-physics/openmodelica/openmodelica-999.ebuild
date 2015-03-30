@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit subversion 
+inherit subversion  
 
 DESCRIPTION="The Open Source Modelica Compiler"
 HOMEPAGE="https://openmodelica.org"
@@ -39,26 +39,25 @@ RDEPEND="${DEPEND}
 		 dev-libs/ocl-icd  
 		 sci-mathematics/sundials 
 		 sci-libs/metis"
-# rml-mmc-999
 
 ESVN_REPO_URI="https://openmodelica.org/svn/OpenModelica/trunk/"
 
-AUTOTOOLS_IN_SOURCE_BUILD=1
-
-LD_LIBRARY_PATH=/var/tmp/portage/sci-physics/openmodelica-999/work/openmodelica-999/build/bin/../lib/omc/:$LD_LIBRARY_PATH
 
 src_unpack() {
 
 	subversion_src_unpack
 }
 
+src_prepare() {
+	eautoconf
+}
+
 src_configure() {
-	autoconf
 	local myeconfargs=(
 					--with-paradiseo
 					--with-METIS=/usr/lib/
 					--with-omniORB=/usr/lib/
-					--disable-modelica3d
+					--enable-OMNotebook
 	)
 	econf $myeconfargs
 }
