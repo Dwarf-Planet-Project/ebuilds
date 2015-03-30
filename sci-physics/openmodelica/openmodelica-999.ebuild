@@ -15,9 +15,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-CFLAGS="-fPIC"
-CXXFLAGS="-fPIC"
-
 DEPEND=" <dev-java/antlr-3.0 
          dev-vcs/subversion 
 		 dev-java/icedtea:7 

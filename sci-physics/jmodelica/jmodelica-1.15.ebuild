@@ -8,9 +8,6 @@ DESCRIPTION="an extensible Modelica-based open source platform for optimization,
 HOMEPAGE="jmodelica.org"
 SRC_URI=""
 
-CFLAGS="-fPIC"
-CXXFLAGS="-fPIC"
-
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS=""
@@ -20,7 +17,19 @@ DEPEND="superlu? ( sci-libs/superlu )
         ipopt? ( sci-libs/ipopt )
 		eclipse? ( dev-util/eclipse-sdk-bin  )
 		cppad? ( sci-libs/coinor-cppad )
-		dev-python/cython"
+		dev-python/cython
+		dev-vcs/subversion
+		dev-python/ipython
+		dev-util/cmake
+		dev-lang/swig:2
+		dev-java/ant-core
+		dev-python/numpy
+		dev-python/scipy
+		dev-python/matplotlib
+		dev-python/lxml
+		dev-python/nose
+		dev-python/jpype 
+		"
 RDEPEND="${DEPEND}"
 
 inherit subversion 
