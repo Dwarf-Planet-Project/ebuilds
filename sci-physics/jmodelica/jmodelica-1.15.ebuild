@@ -24,7 +24,7 @@ DEPEND="superlu? ( sci-libs/superlu )
 		dev-lang/swig:0
 		dev-java/ant-core
 		dev-python/numpy
-		dev-python/scipy
+		sci-libs/scipy
 		dev-python/matplotlib
 		dev-python/lxml
 		dev-python/nose
