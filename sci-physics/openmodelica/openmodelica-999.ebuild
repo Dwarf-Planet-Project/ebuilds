@@ -26,7 +26,8 @@ DEPEND=" <dev-java/antlr-3.0
 		 sys-devel/autoconf-wrapper
 		 sci-libs/lis
 		 x11-libs/gtkglext
-		 dev-games/openscenegraph"
+		 dev-games/openscenegraph
+		 sys-apps/hwloc"
 
 RDEPEND="${DEPEND} 
 		 sci-mathematics/lpsolve 
