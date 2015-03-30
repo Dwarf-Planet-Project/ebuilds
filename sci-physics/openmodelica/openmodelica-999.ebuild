@@ -23,7 +23,9 @@ DEPEND=" <dev-java/antlr-3.0
 		 sys-devel/autoconf 
 		 sci-mathematics/paradiseo-bin
 		 dev-util/nvidia-cuda-toolkit
-		 sys-devel/autoconf-wrapper"
+		 sys-devel/autoconf-wrapperi
+		 sci-libs/lis
+		 x11-libs/gtkglext"
 
 RDEPEND="${DEPEND} 
 		 sci-mathematics/lpsolve 
