@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit subversion  
+inherit subversion autotools
 
 DESCRIPTION="The Open Source Modelica Compiler"
 HOMEPAGE="https://openmodelica.org"
@@ -27,7 +27,8 @@ DEPEND=" <dev-java/antlr-3.0
 		 sci-libs/lis
 		 x11-libs/gtkglext
 		 dev-games/openscenegraph
-		 sys-apps/hwloc"
+		 sys-apps/hwloc
+		 dev-libs/msgpack"
 
 RDEPEND="${DEPEND} 
 		 sci-mathematics/lpsolve 
@@ -64,11 +65,11 @@ src_configure() {
 
 
 src_compile() {
-	emake 
+	eautomake 
 }
 
 src_install() {
-	emake DESTDIR="${D}" install	
+	eautomake DESTDIR="${D}" install	
 }
 
 
