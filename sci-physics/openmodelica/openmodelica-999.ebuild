@@ -28,7 +28,12 @@ DEPEND=" <dev-java/antlr-3.0
 		 x11-libs/gtkglext
 		 dev-games/openscenegraph
 		 sys-apps/hwloc
-		 dev-libs/msgpack"
+		 dev-libs/msgpack
+		 dev-qt/qtgui
+		 dev-qt/qtcore
+		 dev-qt/qtsvg
+		 dev-qt/qtwebkit
+		 sci-libs/hdf5"
 
 RDEPEND="${DEPEND} 
 		 sci-mathematics/lpsolve 
