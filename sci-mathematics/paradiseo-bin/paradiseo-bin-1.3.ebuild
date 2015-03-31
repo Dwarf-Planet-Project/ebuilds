@@ -8,7 +8,7 @@ inherit unpacker
 
 DESCRIPTION="A Software Framework for Metaheuristics"
 HOMEPAGE="http://paradiseo.gforge.inria.fr"
-SRC_URI="https://gforge.inria.fr/frs/download.php/27238/paradiseo-${PV}-beta2.tar.gz"
+SRC_URI="https://gforge.inria.fr/frs/download.php/27238/${PN%-bin}-${PV}-beta2.tar.gz"
 
 LICENSE="CeCILL-2"
 SLOT="0"
@@ -26,7 +26,6 @@ src_unpack() {
 	cd ${PN}-${PV}
 	#echo $PN
 	localbuild=${PN%-bin}
-	#echo $localbuild
 	wget -O paradiseo-${PV}.deb "http://build.openmodelica.org/apt/pool/contrib-wheezy/${localbuild}_${PV}-beta2-3_${ARCH}.deb" || die
 	unpack_deb  ./paradiseo-${PV}.deb
 
