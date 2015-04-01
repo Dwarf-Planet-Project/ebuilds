@@ -16,24 +16,25 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND=" <dev-java/antlr-3.0 
-         dev-vcs/subversion 
-		 dev-java/icedtea:7 
-		 dev-libs/boost 
-		 dev-libs/boehm-gc[threads]
-		 sys-devel/autoconf 
-		 sci-mathematics/paradiseo-bin
-		 dev-util/nvidia-cuda-toolkit
-		 sys-devel/autoconf-wrapper
-		 sci-libs/lis
-		 x11-libs/gtkglext
-		 dev-games/openscenegraph
-		 sys-apps/hwloc
-		 dev-libs/msgpack
-		 dev-qt/qtgui
-		 dev-qt/qtcore
-		 dev-qt/qtsvg
-		 dev-qt/qtwebkit
-		 sci-libs/hdf5"
+        dev-vcs/subversion 
+		dev-java/icedtea:7 
+		dev-libs/boost 
+		dev-libs/boehm-gc[threads]
+		sys-devel/autoconf 
+		sci-mathematics/paradiseo-bin
+		dev-util/nvidia-cuda-toolkit
+		sys-devel/autoconf-wrapper
+		sci-libs/lis
+		x11-libs/gtkglext
+		dev-games/openscenegraph
+		sys-apps/hwloc
+		dev-libs/msgpack
+		dev-qt/qtgui:4
+		dev-qt/qtcore:4
+		dev-qt/qtsvg:4
+		dev-qt/qtwebkit:4
+		sci-libs/hdf5
+		sys-libs/readline"
 
 RDEPEND="${DEPEND} 
 		 sci-mathematics/lpsolve 
@@ -57,6 +58,9 @@ src_unpack() {
 }
 
 src_prepare() {
+# patch configure.in to force bootstraping of omc, as rebuild without bootstraping causes sandbox problems
+	sed -i "s,which\ omc,," ./configure.in
+#	sed -i "s/$ORIGIN/${D}/" ./configure.in
 	eautoconf
 }
 
@@ -73,6 +77,10 @@ src_configure() {
 
 src_compile() {
 	emake 
+}
+
+src_test() {
+	emake test
 }
 
 src_install() {
