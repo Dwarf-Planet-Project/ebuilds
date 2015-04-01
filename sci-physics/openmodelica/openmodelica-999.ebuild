@@ -21,7 +21,7 @@ DEPEND=" <dev-java/antlr-3.0
 		dev-libs/boost 
 		dev-libs/boehm-gc[threads]
 		sys-devel/autoconf 
-		sci-mathematics/paradiseo
+		sci-mathematics/paradiseo-bin
 		dev-util/nvidia-cuda-toolkit
 		sys-devel/autoconf-wrapper
 		sci-libs/lis
