@@ -21,7 +21,7 @@ DEPEND=" <dev-java/antlr-3.0
 		dev-libs/boost 
 		dev-libs/boehm-gc[threads]
 		sys-devel/autoconf 
-		sci-mathematics/paradiseo-bin
+		sci-mathematics/paradiseo
 		dev-util/nvidia-cuda-toolkit
 		sys-devel/autoconf-wrapper
 		sci-libs/lis
@@ -60,7 +60,7 @@ src_unpack() {
 src_prepare() {
 # patch configure.in to force bootstraping of omc, as rebuild without bootstraping causes sandbox problems
 	sed -i "s,which\ omc,," ./configure.in
-#	sed -i "s/$ORIGIN/${D}/" ./configure.in
+	sed -i "s/$ORIGIN/${D}/" ./configure.in
 	eautoconf
 }
 
