@@ -57,7 +57,7 @@ src_prepare() {
 # check for path /home/adrpo/om/Compiler/ in source files
 	sed -i "s,which\ omc,," ./configure.in
 	sed -i "s/$ORIGIN/${D}/" ./configure.in
-	eautoconf
+	eautoreconf
 }
 
 src_configure() {
