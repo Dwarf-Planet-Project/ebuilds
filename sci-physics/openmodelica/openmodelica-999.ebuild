@@ -70,6 +70,13 @@ src_configure() {
 	econf $myeconfargs
 }
 
+src_compile() {
+
+	emake 
+	
+}
+
+
 src_test() {
 	emake test
 }
