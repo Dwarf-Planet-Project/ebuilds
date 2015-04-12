@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit subversion autotools
+inherit subversion autotools java-pkg-2
 
 DESCRIPTION="The Open Source Modelica Compiler"
 HOMEPAGE="https://openmodelica.org"
@@ -17,7 +17,7 @@ IUSE=""
 
 DEPEND=" <dev-java/antlr-3.0 
         dev-vcs/subversion 
-		dev-java/icedtea:7 
+		>=virtual/jdk-1.7
 		dev-libs/boost 
 		dev-libs/boehm-gc[threads]
 		sys-devel/autoconf 
@@ -47,7 +47,8 @@ RDEPEND="${DEPEND}
 		 sci-mathematics/sundials 
 		 sci-libs/metis
 		 sci-libs/ipopt
-		 sci-libs/umfpack"
+		 sci-libs/umfpack
+		 >=virtual/jre-1.7"
 
 ESVN_REPO_URI="https://openmodelica.org/svn/OpenModelica/trunk/"
 
@@ -59,6 +60,7 @@ src_unpack() {
 
 src_prepare() {
 # patch configure.in to force bootstraping of omc, as rebuild without bootstraping causes sandbox problems
+# check for path /home/adrpo/om/Compiler/ in source files
 	sed -i "s,which\ omc,," ./configure.in
 	sed -i "s/$ORIGIN/${D}/" ./configure.in
 	eautoconf
