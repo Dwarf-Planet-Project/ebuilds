@@ -52,18 +52,12 @@ RDEPEND="${DEPEND}
 
 ESVN_REPO_URI="https://openmodelica.org/svn/OpenModelica/trunk/"
 
-
-src_unpack() {
-
-	subversion_src_unpack
-}
-
 src_prepare() {
 # patch configure.in to force bootstraping of omc, as rebuild without bootstraping causes sandbox problems
 # check for path /home/adrpo/om/Compiler/ in source files
 	sed -i "s,which\ omc,," ./configure.in
 	sed -i "s/$ORIGIN/${D}/" ./configure.in
-	eautoconf
+	eautoreconf
 }
 
 src_configure() {
@@ -76,17 +70,8 @@ src_configure() {
 	econf $myeconfargs
 }
 
-
-src_compile() {
-	emake 
-}
-
 src_test() {
 	emake test
-}
-
-src_install() {
-	emake DESTDIR="${D}" install	
 }
 
 
