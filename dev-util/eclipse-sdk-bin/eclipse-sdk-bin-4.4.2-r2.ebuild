@@ -31,8 +31,7 @@ cp "${FILESDIR}"/eclipse-bin-${SLOT} "${T}" || die
 sed "s@%SLOT%@${SLOT}@" -i "${T}"/eclipse{,rc}-bin-${SLOT} || die
 insinto /etc
 newins "${T}"/eclipserc-bin-${SLOT} eclipserc-bin-${SLOT}
-newbin "${T}"/eclipse-bin-${SLOT} eclipse-bin-${SLOT}
+newbin "${T}"/eclipse-bin-${SLOT} eclipse
 make_desktop_entry "eclipse-bin-${SLOT}" "Eclipse ${PV} (bin)" "${dest}/icon.xpm"a
-dosym /usr/bin/eclipse-bin-${SLOT} /usr/bin/eclipse
 }
 
