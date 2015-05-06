@@ -27,7 +27,6 @@ DEPEND=" <dev-java/antlr-3.0
 		sci-libs/lis
 		x11-libs/gtkglext
 		dev-games/openscenegraph
-		dev-libs/msgpack
 		dev-qt/qtgui:4
 		dev-qt/qtcore:4
 		dev-qt/qtsvg:4
