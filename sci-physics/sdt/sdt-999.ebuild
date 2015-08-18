@@ -23,9 +23,7 @@ DEPEND=" dev-qt/qtsvg
 		 dev-qt/qt3support
 		 sci-libs/blas-reference
 		 dev-qt/designer
-		 sci-libs/gsl
-		 sci-visualization/qtiplot
-		 "
+		 sci-libs/gsl"
 
 RDEPEND="${DEPEND}" 
 
