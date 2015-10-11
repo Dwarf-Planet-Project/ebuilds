@@ -39,26 +39,13 @@ src_unpack() {
 }
 
 src_configure() {
-	#cd thirdparty/qtiplot/
-	#eqmake4 qtiplot.pro
-	#cd 3rdparty/qwt
-	#eqmake4 qwt.pro
-	#cd ../qwtplot3d/
-	#eqmake4 qwtplot3d.pro
-	#cd ../../../../
-	#pwd
-	append-flags -Wno-error
 	eqmake4 STA.pro -recursive 
 }
 
 src_compile() {
-#cd thirdparty/qtiplot/
-#emake
-#cd 3rdparty/qwt/
-#emake
-#cd ../qwtplot3d/
-#emake
-#cd ../../../../
-emake
+	emake
+}
 
+src_install() {
+    emake DESTDIR="${D}" install
 }

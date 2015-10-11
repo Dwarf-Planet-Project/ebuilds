@@ -27,8 +27,7 @@ DEPEND="superlu? ( sci-libs/superlu )
 		sci-libs/scipy
 		dev-python/matplotlib
 		dev-python/lxml
-		dev-python/nose
-		"
+		dev-python/nose"
 RDEPEND="${DEPEND}"
 
 inherit subversion 
