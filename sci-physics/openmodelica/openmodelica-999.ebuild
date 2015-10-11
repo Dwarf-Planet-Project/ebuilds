@@ -22,7 +22,7 @@ DEPEND=" <dev-java/antlr-3.0
 		dev-libs/boehm-gc[threads]
 		sys-devel/autoconf 
 		sci-mathematics/paradiseo-bin
-		dev-libs/libcuda
+		dev-util/nvidia-cuda-toolkit
 		sys-devel/autoconf-wrapper
 		sci-libs/lis
 		x11-libs/gtkglext
