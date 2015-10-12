@@ -53,7 +53,7 @@ ESVN_REPO_URI="https://openmodelica.org/svn/OpenModelica/trunk/"
 src_prepare() {
 # patch configure.in to force bootstraping of omc, as rebuild without bootstraping causes sandbox problems
 # check for path /home/adrpo/om/Compiler/ in source files
-	epatch "${FILESDIR}/patch1"
+	epatch "${WORKDIR}/patch1"
 	sed -i "s,which\ omc,," ./configure.in
 	sed -i "s/$ORIGIN/${D}/" ./configure.in
 	eautoreconf
