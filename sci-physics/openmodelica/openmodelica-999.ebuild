@@ -32,7 +32,8 @@ DEPEND=" <dev-java/antlr-3.0
 		dev-qt/qtsvg:4
 		dev-qt/qtwebkit:4
 		sci-libs/hdf5
-		sys-libs/readline"
+		sys-libs/readline
+		sys-devel/clang"
 
 RDEPEND="${DEPEND} 
 		 sci-mathematics/lpsolve 
@@ -63,7 +64,7 @@ src_configure() {
 	local myeconfargs=(
 					--with-paradiseo
 					--with-METIS=/usr/lib/
-					--with-omniORB=/usr/lib/
+					--with-omniORB=/usr
 					--enable-OMNotebook
 					--without-omc
 	)
