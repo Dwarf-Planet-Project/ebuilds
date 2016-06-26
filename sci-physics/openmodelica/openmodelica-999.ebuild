@@ -65,6 +65,7 @@ src_configure() {
 					--with-METIS=/usr/lib/
 					--with-omniORB=/usr/lib/
 					--enable-OMNotebook
+					--without-omc
 	)
 	econf $myeconfargs
 }
