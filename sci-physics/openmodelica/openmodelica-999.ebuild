@@ -67,7 +67,8 @@ src_configure() {
 					--with-omniORB=/usr
 					--enable-OMNotebook
 					--without-omc
-					--prefix=$WORKDIR
+					--prefix=${WORKDIR}
+					--exec-prefix=${WORKDIR}
 	)
 	econf $myeconfargs
 }
