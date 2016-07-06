@@ -24,7 +24,7 @@ DEPEND="${RDEPEND}
 	dev-ml/camlp4"
 
 src_prepare() {
-	"${FILESDIR}"/ocaml4_typing
+	epatch "${FILESDIR}"/ocaml4_typing
 }
 
 src_install() {
