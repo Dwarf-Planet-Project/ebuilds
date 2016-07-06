@@ -20,12 +20,7 @@ RDEPEND="
 	dev-lang/tk:0="
 DEPEND="${RDEPEND}
 	dev-lang/ocaml
-	dev-ml/labltk
-	dev-ml/camlp4"
-
-src_prepare() {
-	"${FILESDIR}"/ocaml4_typing
-}
+	dev-ml/labltk"
 
 src_install() {
 	dogamesbin planets
