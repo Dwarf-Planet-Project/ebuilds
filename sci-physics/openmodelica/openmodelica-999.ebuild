@@ -33,7 +33,9 @@ DEPEND=" <dev-java/antlr-3.0
 		dev-qt/qtwebkit:4
 		sci-libs/hdf5
 		sys-libs/readline
-		sys-devel/clang"
+		sys-devel/clang
+		dev-lang/perl[ithreads]"
+
 
 RDEPEND="${DEPEND} 
 		 sci-mathematics/lpsolve 
@@ -71,16 +73,15 @@ src_configure() {
 					--exec-prefix=${WORKDIR}
 					--with-ombuilddir=${WORKDIR}
 					--with-openmodelicahome=${WORKDIR}
-					--with-cppruntime
 	)
 	econf $myeconfargs
 }
 
 src_compile() {
 
-	emake omc
-	emake mosh
-	emake qtclients
+	emake
+#	emake mosh
+#	emake qtclients
 	
 }
 
