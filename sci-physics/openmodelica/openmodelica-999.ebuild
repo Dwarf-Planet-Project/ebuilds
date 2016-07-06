@@ -69,6 +69,9 @@ src_configure() {
 					--without-omc
 					--prefix=${WORKDIR}
 					--exec-prefix=${WORKDIR}
+					--with-ombuilddir=${WORKDIR}
+					--with-openmodelicahome=${WORKDIR}
+					--with-cppruntime
 	)
 	econf $myeconfargs
 }
