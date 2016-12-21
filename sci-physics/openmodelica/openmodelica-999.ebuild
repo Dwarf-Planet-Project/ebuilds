@@ -80,15 +80,15 @@ src_configure() {
 src_compile() {
 
 	emake
-#	emake mosh
-#	emake qtclients
+	emake mosh
+	emake qtclients
 	
 }
 
 
-src_test() {
-	emake test
-}
+#src_test() {
+#	emake test
+#}
 
 
 src_install() {
