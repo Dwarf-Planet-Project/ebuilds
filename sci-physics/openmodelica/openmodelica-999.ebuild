@@ -59,7 +59,7 @@ src_prepare() {
 
 	eapply_user
 
-	git clone https://github.com/modelica/Modelica.git "${WORKDIR}/${P}/libraries/git/MSL/Modelica"
+	git clone https://github.com/modelica/Modelica.git "${WORKDIR}/${P}/libraries/git/MSL/"
 
 	epatch "$FILESDIR/fix_modelica_1.6.patch"
 	eautoreconf
