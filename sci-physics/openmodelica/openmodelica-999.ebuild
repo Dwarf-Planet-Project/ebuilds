@@ -35,7 +35,6 @@ DEPEND=" <dev-java/antlr-3.0
 	sys-devel/clang
 	dev-lang/perl[ithreads]"
 
-#	dev-util/nvidia-cuda-toolkit
 RDEPEND="${DEPEND}
 	sci-mathematics/lpsolve
 	dev-db/sqlite
@@ -50,7 +49,6 @@ RDEPEND="${DEPEND}
 	sci-libs/umfpack
 	virtual/jre:1.7"
 
-EGIT_CLONE_TYPE="mirror"
 EGIT_REPO_URI="https://github.com/OpenModelica/OpenModelica.git"
 
 src_prepare() {
@@ -60,6 +58,9 @@ src_prepare() {
 	sed -i "s/$ORIGIN/${D}/" ./configure.in
 
 	eapply_user
+
+	mkdir "${WORKDIR}/${P}/libraries/git/MSL"
+	git clone https://github.com/modelica/Modelica.git "${WORKDIR}/${P}/libraries/git/MSL"
 
 	eautoreconf
 }
