@@ -50,6 +50,7 @@ RDEPEND="${DEPEND}
 	sci-libs/umfpack
 	virtual/jre:1.7"
 
+EGIT_CLONE_TYPE="mirror"
 EGIT_REPO_URI="https://github.com/OpenModelica/OpenModelica.git"
 
 src_prepare() {
