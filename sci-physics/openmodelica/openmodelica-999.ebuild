@@ -22,20 +22,20 @@ DEPEND=" <dev-java/antlr-3.0
 	dev-libs/boehm-gc[threads]
 	sys-devel/autoconf:2.5
 	sci-mathematics/paradiseo-bin
-	dev-util/nvidia-cuda-toolkit
 	sys-devel/autoconf-wrapper
 	sci-libs/lis
 	x11-libs/gtkglext
 	dev-games/openscenegraph
-	dev-qt/qtgui:4
-	dev-qt/qtcore:4
-	dev-qt/qtsvg:4
-	dev-qt/qtwebkit:4
+	dev-qt/qtgui:5
+	dev-qt/qtcore:5
+	dev-qt/qtsvg:5
+	dev-qt/qtwebkit:5
 	sci-libs/hdf5
 	sys-libs/readline:0
 	sys-devel/clang
 	dev-lang/perl[ithreads]"
 
+#	dev-util/nvidia-cuda-toolkit
 RDEPEND="${DEPEND}
 	sci-mathematics/lpsolve
 	dev-db/sqlite
