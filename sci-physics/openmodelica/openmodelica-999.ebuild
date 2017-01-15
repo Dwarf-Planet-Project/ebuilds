@@ -76,6 +76,8 @@ src_configure() {
 					--exec-prefix="${WORKDIR}"
 					--with-ombuilddir="${WORKDIR}"
 					--with-openmodelicahome="${WORKDIR}"
+					CC=clang
+					CXX=clang++
 	)
 	econf $myeconfargs
 }
