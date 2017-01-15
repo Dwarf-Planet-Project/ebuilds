@@ -1,0 +1,13 @@
+diff --git a/Makefile.libs b/Makefile.libs
+index b2223c0..38ca192 100644
+--- a/Makefile.libs
++++ b/Makefile.libs
+@@ -236,7 +236,7 @@ MSL:
+ 	# Building git/MSL
+ 	./checkout-git.sh 'git/MSL' 'https://github.com/modelica/Modelica.git' 'release' 'v1.6'
+ 	test ! -d 'build//Modelica 1.6'
+-	cp -a 'git/MSL/Modelica 1.6' "$(BUILD_DIR)/Modelica 1.6"
++	cp -a 'git/MSL/Modelica' "$(BUILD_DIR)/Modelica 1.6"
+ 	patch -d "$(BUILD_DIR)/" -f -p1 < 'Modelica 1.6.patch'
+ 	echo '' > "$(BUILD_DIR)/Modelica 1.6.uses"
+ 	echo 'modelica1.1' > "$(BUILD_DIR)/Modelica 1.6.license"
