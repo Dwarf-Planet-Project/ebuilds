@@ -13,11 +13,27 @@ SRC_URI=""
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="clang boost hwloc java system-libexpat sundials corba qt4 qt5"
 
-DEPEND=" <dev-java/antlr-3.0
-	dev-vcs/subversion
-	virtual/jdk:1.7
+RDEPEND="
+	sci-mathematics/lpsolve
+	dev-db/sqlite
+	net-misc/omniORB
+	x11-libs/qwt:6
+	sci-libs/blas-reference
+	sci-libs/lapack-reference
+	dev-libs/ocl-icd
+	sundials? ( sci-mathematics/sundials )
+	sci-libs/metis
+	sci-libs/ipopt
+	sci-libs/umfpack
+	java? ( virtual/jre:1.7 )
+	system-libexpat? ( dev-libs/expat )
+	hwloc? ( sys-apps/hwloc )"
+
+DEPEND=" ${RDEPEND}
+	<dev-java/antlr-3.0
+	java? ( virtual/jdk:1.7 )
 	dev-libs/boost
 	dev-libs/boehm-gc[threads]
 	sys-devel/autoconf:2.5
@@ -26,28 +42,18 @@ DEPEND=" <dev-java/antlr-3.0
 	sci-libs/lis
 	x11-libs/gtkglext
 	dev-games/openscenegraph
-	dev-qt/qtgui:5
+	qt5? ( dev-qt/qtgui:5
 	dev-qt/qtcore:5
 	dev-qt/qtsvg:5
-	dev-qt/qtwebkit:5
+	dev-qt/qtwebkit:5 )
+	qt4? ( dev-qt/qtgui:4
+	dev-qt/qtcore:4
+	dev-qt/qtsvg:4
+	dev-qt/qtwebkit:4 )
 	sci-libs/hdf5
 	sys-libs/readline:0
 	sys-devel/clang
 	dev-lang/perl[ithreads]"
-
-RDEPEND="${DEPEND}
-	sci-mathematics/lpsolve
-	dev-db/sqlite
-	net-misc/omniORB
-	x11-libs/qwt:6
-	sci-libs/blas-reference
-	sci-libs/lapack-reference
-	dev-libs/ocl-icd
-	sci-mathematics/sundials
-	sci-libs/metis
-	sci-libs/ipopt
-	sci-libs/umfpack
-	virtual/jre:1.7"
 
 EGIT_REPO_URI="https://github.com/OpenModelica/OpenModelica.git"
 
@@ -67,15 +73,15 @@ src_prepare() {
 
 src_configure() {
 	local myeconfargs=(
-					--with-paradiseo
 					--with-METIS=/usr/lib/
 					--with-omniORB=/usr
-					--enable-OMNotebook
-					--without-omc
 					--prefix="${WORKDIR}"
 					--exec-prefix="${WORKDIR}"
 					--with-ombuilddir="${WORKDIR}"
 					--with-openmodelicahome="${WORKDIR}"
+					--with-paradiseo
+					--without-omc
+					--enable-OMNotebook
 					CC=clang
 					CXX=clang++
 	)
