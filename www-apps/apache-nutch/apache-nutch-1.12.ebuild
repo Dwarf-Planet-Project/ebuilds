@@ -6,7 +6,7 @@ EAPI=6
 
 DESCRIPTION="Nutch is a well matured, production ready Web crawler."
 HOMEPAGE="https://nutch.apache.org"
-SRC_URI=""
+SRC_URI="mirror://apache/nutch/${PV}/${P}-src.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
