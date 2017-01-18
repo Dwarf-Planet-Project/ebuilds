@@ -16,5 +16,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-java/ant-ivy:2
-		dev-java/ant-core"
+		dev-java/ant-core
+		dev-java/icedtea:8"
 RDEPEND="${DEPEND}"
