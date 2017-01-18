@@ -1,8 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
-# virtual/jdk:1.7 
-
+#virtual/jre:1.7
 EAPI=6
 
 inherit java-pkg-2 java-ant-2
@@ -16,8 +15,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="virtual/jre:1.7"
+RDEPEND=""
 DEPEND="${RDEPEND}
+		 virtual/jdk:1.7 
 		dev-java/ant-ivy:2
 		dev-java/ant-core
 		dev-java/icedtea:8"
