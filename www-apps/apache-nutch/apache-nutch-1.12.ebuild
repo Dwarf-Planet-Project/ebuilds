@@ -1,6 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
+# virtual/jdk:1.7 
 
 EAPI=6
 
@@ -15,7 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-java/ant-ivy:2
+RDEPEND="virtual/jre:1.7"
+DEPEND="${RDEPEND}
+		dev-java/ant-ivy:2
 		dev-java/ant-core
 		dev-java/icedtea:8"
-RDEPEND="${DEPEND}"
