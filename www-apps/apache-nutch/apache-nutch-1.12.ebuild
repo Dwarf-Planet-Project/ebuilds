@@ -17,7 +17,6 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		virtual/jdk:1.7
-		dev-java/ant-ivy:2
-		dev-java/ant-core
-		dev-java/icedtea:8"
+		virtual/jdk:=
+		dev-java/ant-ivy:=
+		dev-java/ant-core"

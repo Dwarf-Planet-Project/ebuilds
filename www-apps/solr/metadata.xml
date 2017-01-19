@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<maintainer type="person">
+<email>hoehnp@gmx.de</email>
+<name>Patrick Hoehn</name>
+</maintainer>
+<use>
+<flag name="idea">Build with support for IntelliJ IDEA IDE</flag>
+<flag name="netbeans">Build with support for Netbeans IDE</flag>
+</use>
+<longdescription lang="en">
+</longdescription>
+</pkgmetadata>
