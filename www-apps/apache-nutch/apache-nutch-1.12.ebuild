@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND=""
+RDEPEND="virtual/jre:="
 DEPEND="${RDEPEND}
 		virtual/jdk:=
 		dev-java/ant-ivy:=
