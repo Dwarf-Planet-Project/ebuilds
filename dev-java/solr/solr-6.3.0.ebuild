@@ -14,7 +14,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="idea netbeans"
 
 RDEPEND="netbeans? ( dev-util/netbeans:= )
-		idea? ( dev-util/idea-ultimate )"
+		idea? ( dev-util/idea-ultimate )
+		dev-java/randomizedtesting"
 DEPEND="${RDEPEND}
 		virtual/jdk:1.7
 		dev-java/ant-ivy:2
