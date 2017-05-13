@@ -25,3 +25,6 @@ src_prepare() {
 	eapply_user
 }
 
+src_install() {
+	emake INSTALL_ROOT="${D}" install
+}
