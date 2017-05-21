@@ -5,7 +5,8 @@
 EAPI=5
 
 #EHG_REPO_URI="https://bitbucket.org/EionRobb/purple-hangouts"
-inherit mercurial multilib
+#inherit mercurial multilib
+inherit multilib
 
 DESCRIPTION="Hangouts Plugin for libpurple"
 HOMEPAGE="https://bitbucket.org/EionRobb/purple-hangouts/"
