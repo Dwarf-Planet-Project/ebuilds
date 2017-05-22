@@ -4,11 +4,14 @@
 
 EAPI=5
 
-EHG_REPO_URI="https://bitbucket.org/EionRobb/purple-hangouts"
-inherit mercurial multilib
+#EHG_REPO_URI="https://bitbucket.org/EionRobb/purple-hangouts"
+#inherit mercurial multilib
+inherit multilib
 
 DESCRIPTION="Hangouts Plugin for libpurple"
 HOMEPAGE="https://bitbucket.org/EionRobb/purple-hangouts/"
+
+SRC_URI="http://dwarf-planet-project.github.io/purple-hangouts-0.1.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
