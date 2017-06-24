@@ -21,10 +21,4 @@ RDEPEND="net-im/pidgin
 DEPEND="${RDEPEND}"
 DOCS=( AUTHORS ChangeLog NEWS README VERSION )
 
-src_configure() {
-	econf --with-ssl-certs
-}
 
-src_prepare() {
-	eautoreconf
-}
