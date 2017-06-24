@@ -21,6 +21,10 @@ RDEPEND="net-im/pidgin
 DEPEND="${RDEPEND}"
 DOCS=( AUTHORS ChangeLog NEWS README VERSION )
 
+src_prepare() {
+ ./autogen.sh
+}
+
 src_install() {
 	emake DESTDIR="${D}" install
 }
