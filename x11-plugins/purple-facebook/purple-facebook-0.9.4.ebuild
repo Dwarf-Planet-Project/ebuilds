@@ -27,6 +27,6 @@ src_prepare() {
 
 src_install() {
 	dodir /usr/lib/purple-2
-	cp "${S}/pidgin/libpurple/protocols/facebook/.libs/libfacebook.so" "${D}"
+	cp "${S}/pidgin/libpurple/protocols/facebook/.libs/libfacebook.so" "${D}/usr/lib/purple-2"
 
 }
