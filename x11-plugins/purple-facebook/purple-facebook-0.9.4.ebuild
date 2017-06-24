@@ -21,4 +21,6 @@ RDEPEND="net-im/pidgin
 DEPEND="${RDEPEND}"
 DOCS=( AUTHORS ChangeLog NEWS README VERSION )
 
-
+src_install() {
+	emake DESTDIR="${D}" install
+}
