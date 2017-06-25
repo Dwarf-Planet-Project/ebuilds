@@ -89,11 +89,6 @@ S="${WORKDIR}/${MY_P}"
 
 DOCS=( AUTHORS.txt ChangeLog NEWS.txt )
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-3.4.0-cmake.patch
-	"${FILESDIR}"/${P}-ffmpeg-3.patch
-)
-
 src_unpack() {
 	unpack ${A}
 	mv ${WORKDIR}/${MY_PN}-${MY_P} ${WORKDIR}/${MY_P}
