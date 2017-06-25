@@ -94,6 +94,11 @@ PATCHES=(
 	"${FILESDIR}"/${P}-ffmpeg-3.patch
 )
 
+src_unpack() {
+	unpack ${A}
+	mv ${WORKDIR}/${MY_PN}-${MY_P} ${WORKDIR}/${MY_P}
+}
+
 src_configure() {
 	if use examples && use wxwidgets; then
 		need-wxwidgets unicode
