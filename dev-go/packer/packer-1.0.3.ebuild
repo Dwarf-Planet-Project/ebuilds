@@ -13,6 +13,7 @@ else
 	inherit golang-vcs-snapshot
 fi
 inherit golang-build
+GOROOT="/usr/lib/go/"
 
 DESCRIPTION="Go vendor tool that works with the standard vendor file."
 HOMEPAGE="https://www.packer.io"
