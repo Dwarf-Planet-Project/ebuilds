@@ -43,6 +43,5 @@ src_unpack(){
 }
 
 src_compile() {
-	cd ${WORKDIR}
 	./build.sh
 }
