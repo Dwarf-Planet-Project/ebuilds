@@ -15,6 +15,8 @@ else
 fi
 inherit golang-build
 
+GOROOT="/usr/lib/go-gentoo"
+
 DESCRIPTION="A builder plugin for Packer.IO to support building XenServer images."
 HOMEPAGE="https://www.xenserver.org"
 LICENSE="MPL-2"
