@@ -5,7 +5,7 @@ EAPI=6
 EGO_PN=github.com/xenserver/packer-builder-xenserver/builder/xenserver/xva
 
 if [[ ${PV} = *999* ]]; then
-	inherit golang-vcs 
+	inherit golang-vcs git-r3 
 	EGIT_REPO_URI="https://github.com/xenserver/packer-builder-xenserver.git"
 else
 	KEYWORDS="~amd64 ~arm ~arm64"
