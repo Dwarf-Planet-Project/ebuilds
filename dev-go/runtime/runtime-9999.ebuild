@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-EGO_PN=golang.org/runtime
+EGO_PN=golang.org/x/runtime
 
 if [[ ${PV} = *9999* ]]; then
 	inherit golang-vcs
