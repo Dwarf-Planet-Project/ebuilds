@@ -23,6 +23,10 @@ IUSE=""
 DEPEND="dev-go/packer"
 RDEPEND="dev-go/packer"
 
+src_fetch(){
+	git-r3_src_fetch
+}
+
 src_unpack(){
 	git-r3_checkout
 }
