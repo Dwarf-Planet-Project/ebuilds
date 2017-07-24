@@ -24,6 +24,10 @@ DEPEND="dev-go/packer
 		dev-go/gox"
 RDEPEND="dev-go/packer"
 
+src_unpack(){
+	_golang-vcs_env_setup
+}
+
 src_compile() {
 	cd ${WORKDIR}
 	./build.sh
