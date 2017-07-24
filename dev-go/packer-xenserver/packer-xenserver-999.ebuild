@@ -20,7 +20,8 @@ HOMEPAGE="https://www.xenserver.org"
 LICENSE="MPL-2"
 SLOT="0"
 IUSE=""
-DEPEND="dev-go/packer"
+DEPEND="dev-go/packer
+		dev-go/gox"
 RDEPEND="dev-go/packer"
 
 src_fetch(){
