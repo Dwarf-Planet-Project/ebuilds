@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-EGO_PN=golang.org/x/fmt/...
+EGO_PN=golang.org/cmd/gofmt
 
 if [[ ${PV} = *9999* ]]; then
 	inherit golang-vcs
