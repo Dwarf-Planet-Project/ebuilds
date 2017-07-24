@@ -27,6 +27,18 @@ RDEPEND="dev-go/packer"
 src_unpack(){
 	_golang-vcs_env_setup
 	ego_pn_check
+	if [[ -z ${EVCS_OFFLINE} ]]; then
+		[[ -n ${EVCS_UMASK} ]] && eumask_push ${EVCS_UMASK}
+
+		set -- env GOPATH="${EGO_STORE_DIR}" go get -d -t -u -v -x "${EGO_PN}"
+		echo "$@"
+		# The above dies if you pass repositories in EGO_PN instead of
+		# packages, e.g. golang.org/x/tools instead of golang.org/x/tools/cmd/vet.
+		# This is being discussed in the following upstream issue:
+		# https://github.com/golang/go/issues/11090
+
+		[[ -n ${EVCS_UMASK} ]] && eumask_pop
+	fi
 }
 
 src_compile() {
