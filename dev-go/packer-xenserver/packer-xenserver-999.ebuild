@@ -28,7 +28,7 @@ RDEPEND="dev-go/packer"
 src_unpack(){
 	_golang-vcs_env_setup
 	ego_pn_check
-#	export GOROOT="/usr/lib/go-gentoo/"
+	export GOROOT="/usr/lib/go/"
 
 	if [[ -z ${EVCS_OFFLINE} ]]; then
 		[[ -n ${EVCS_UMASK} ]] && eumask_push ${EVCS_UMASK}
