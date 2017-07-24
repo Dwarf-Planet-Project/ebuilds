@@ -26,6 +26,7 @@ RDEPEND="dev-go/packer"
 
 src_unpack(){
 	_golang-vcs_env_setup
+	ego_pn_check
 }
 
 src_compile() {
