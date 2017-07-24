@@ -15,8 +15,6 @@ else
 fi
 inherit golang-build
 
-GOROOT="/usr/lib/go-gentoo"
-
 DESCRIPTION="A builder plugin for Packer.IO to support building XenServer images."
 HOMEPAGE="https://www.xenserver.org"
 LICENSE="MPL-2"
@@ -29,6 +27,8 @@ RDEPEND="dev-go/packer"
 src_unpack(){
 	_golang-vcs_env_setup
 	ego_pn_check
+	set -- env GOROOT="/usr/lib/go-gentoo"
+
 	if [[ -z ${EVCS_OFFLINE} ]]; then
 		[[ -n ${EVCS_UMASK} ]] && eumask_push ${EVCS_UMASK}
 
