@@ -5,7 +5,7 @@ EAPI=6
 EGO_PN=github.com/xenserver/packer-builder-xenserver
 
 if [[ ${PV} = *999* ]]; then
-	inherit golang-vcs git-r3
+	inherit golang-vcs 
 	EGIT_REPO_URI="https://github.com/xenserver/packer-builder-xenserver.git"
 else
 	KEYWORDS="~amd64 ~arm ~arm64"
@@ -23,14 +23,6 @@ IUSE=""
 DEPEND="dev-go/packer
 		dev-go/gox"
 RDEPEND="dev-go/packer"
-
-src_fetch(){
-	git-r3_src_fetch
-}
-
-src_unpack(){
-	git-r3_checkout
-}
 
 src_compile() {
 	cd ${WORKDIR}
