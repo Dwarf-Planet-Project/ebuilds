@@ -21,7 +21,9 @@ LICENSE="MPL-2"
 SLOT="0"
 IUSE=""
 DEPEND="dev-go/packer
-		dev-go/gox"
+		dev-go/gox
+		dev-go/fmt
+		dev-go/runtime"
 RDEPEND="dev-go/packer"
 
 src_unpack(){
