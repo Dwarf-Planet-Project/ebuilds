@@ -21,3 +21,8 @@ SLOT="0"
 IUSE=""
 DEPEND="dev-go/packer"
 RDEPEND="dev-go/packer"
+
+src_compile() {
+	cd ${WORKDIR}
+	./build.sh
+}
