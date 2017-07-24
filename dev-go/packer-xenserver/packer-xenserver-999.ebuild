@@ -32,7 +32,7 @@ src_unpack(){
 
 		set -- env GOPATH="${EGO_STORE_DIR}" go get -d -t -u -v -x "${EGO_PN}"
 		echo "$@"
-		git-r3_unpack
+		git-r3_src_unpack
 		# The above dies if you pass repositories in EGO_PN instead of
 		# packages, e.g. golang.org/x/tools instead of golang.org/x/tools/cmd/vet.
 		# This is being discussed in the following upstream issue:
