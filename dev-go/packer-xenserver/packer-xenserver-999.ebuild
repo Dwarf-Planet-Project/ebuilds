@@ -34,16 +34,13 @@ src_unpack(){
 
 		echo "$@"
 		git-r3_src_unpack
-		# The above dies if you pass repositories in EGO_PN instead of
-		# packages, e.g. golang.org/x/tools instead of golang.org/x/tools/cmd/vet.
-		# This is being discussed in the following upstream issue:
-		# https://github.com/golang/go/issues/11090
 
 		[[ -n ${EVCS_UMASK} ]] && eumask_pop
 	fi
 }
 
 src_compile() {
-	export GOPATH="/usr/lib/go-gentoo/:/usr/lib/go/:${GOPATH}"
+	export GOPATH="/usr/lib/go-gentoo/:/usr/lib/go/:${GOPATH}:${WORKDIR}/${P}"
 	./build.sh
 }
+
