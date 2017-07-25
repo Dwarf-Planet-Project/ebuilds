@@ -18,7 +18,7 @@ inherit golang-build
 
 DESCRIPTION="A builder plugin for Packer.IO to support building XenServer images."
 HOMEPAGE="https://www.xenserver.org"
-LICENSE="MPL-2"
+LICENSE="MPL-2.0"
 SLOT="0"
 IUSE=""
 DEPEND="dev-go/packer
@@ -39,6 +39,9 @@ src_unpack(){
 
 		[[ -n ${EVCS_UMASK} ]] && eumask_pop
 	fi
+}
+
+src_prepare(){
 	sed -i -e "s,mitchellh/packer/,hashicorp/packer/,g" ${WORKDIR}/packer-xenserver-${PV}/plugin/builder-xenserver-*/main.go
 }
 
@@ -46,4 +49,3 @@ src_compile() {
 	export GOPATH="/usr/lib/go-gentoo/:/usr/lib/go/:${GOPATH}:${WORKDIR}/${P}"
 	./build.sh
 }
-
