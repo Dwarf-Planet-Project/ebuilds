@@ -44,6 +44,6 @@ src_unpack(){
 }
 
 src_compile() {
-	export GOPATH="${GOPATH}:/usr/lib/go-gentoo/:/usr/lib/go/"
+	export GOPATH="/usr/lib/go-gentoo/:/usr/lib/go/:${GOPATH}"
 	./build.sh
 }
