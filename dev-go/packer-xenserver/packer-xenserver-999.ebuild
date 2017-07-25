@@ -32,7 +32,6 @@ src_unpack(){
 	if [[ -z ${EVCS_OFFLINE} ]]; then
 		[[ -n ${EVCS_UMASK} ]] && eumask_push ${EVCS_UMASK}
 
-		set -- env GOPATH="${EGO_STORE_DIR}:/usr/lib/go/:/usr/lib/go-gentoo/" go get -d -t -u -v -x "${EGO_PN}"
 		echo "$@"
 		git-r3_src_unpack
 		# The above dies if you pass repositories in EGO_PN instead of
@@ -45,5 +44,6 @@ src_unpack(){
 }
 
 src_compile() {
+	export GOPATH="${GOPATH}:/usr/lib/go-gentoo/:/usr/lib/go/"
 	./build.sh
 }
