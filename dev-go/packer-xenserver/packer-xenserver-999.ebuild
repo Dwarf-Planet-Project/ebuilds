@@ -37,6 +37,7 @@ src_unpack(){
 
 		[[ -n ${EVCS_UMASK} ]] && eumask_pop
 	fi
+	sed -i -e "s,mitchellh/packer,hashicorp/packer/g" ${WORKDIR}/${P}/plugin/builder-xenserver-*/main.go
 }
 
 src_compile() {
