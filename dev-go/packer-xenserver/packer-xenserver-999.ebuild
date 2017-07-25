@@ -28,12 +28,11 @@ RDEPEND="dev-go/packer"
 src_unpack(){
 	_golang-vcs_env_setup
 	ego_pn_check
-	export GOPATH="${GOPATH}:/usr/lib/go/"
 
 	if [[ -z ${EVCS_OFFLINE} ]]; then
 		[[ -n ${EVCS_UMASK} ]] && eumask_push ${EVCS_UMASK}
 
-		set -- env GOPATH="${EGO_STORE_DIR}" go get -d -t -u -v -x "${EGO_PN}"
+		set -- env GOPATH="${EGO_STORE_DIR}:/usr/lib/go/" go get -d -t -u -v -x "${EGO_PN}"
 		echo "$@"
 		git-r3_src_unpack
 		# The above dies if you pass repositories in EGO_PN instead of
