@@ -7,7 +7,7 @@ EGO_PN=github.com/xenserver/packer-builder-xenserver/builder/xenserver/xva
 if [[ ${PV} = *999* ]]; then
 	inherit golang-vcs git-r3
 	EGIT_REPO_URI="https://github.com/xenserver/packer-builder-xenserver.git"
-	EGIT_CHECKOUT_DIR=${WORKDIR}/${P}/github.com/xenserver/packer-builder-xenserver
+	EGIT_CHECKOUT_DIR=${WORKDIR}/${P}/src/github.com/xenserver/packer-builder-xenserver
 else
 	KEYWORDS="~amd64 ~arm ~arm64"
 	EGIT_COMMIT="v${PV}"
