@@ -43,6 +43,7 @@ src_unpack(){
 
 src_prepare(){
 	sed -i -e "s,mitchellh/packer/,hashicorp/packer/,g" ${EGIT_CHECKOUT_DIR}/plugin/builder-xenserver-*/main.go
+	eapply_user
 }
 
 src_compile() {
