@@ -23,6 +23,7 @@ SLOT="0"
 IUSE=""
 DEPEND="dev-go/packer
 		dev-go/gox
+		dev-go/go-vnc
 		"
 RDEPEND="dev-go/packer"
 
