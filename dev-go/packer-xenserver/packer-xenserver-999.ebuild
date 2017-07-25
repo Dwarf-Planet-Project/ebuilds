@@ -42,7 +42,7 @@ src_unpack(){
 }
 
 src_prepare(){
-	sed -i -e "s,mitchellh/packer/,hashicorp/packer/,g" ${WORKDIR}/packer-xenserver-${PV}/plugin/builder-xenserver-*/main.go
+	sed -i -e "s,mitchellh/packer/,hashicorp/packer/,g" ${EGIT_CHECKOUT_DIR}/plugin/builder-xenserver-*/main.go
 }
 
 src_compile() {
