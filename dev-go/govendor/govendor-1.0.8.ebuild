@@ -16,7 +16,7 @@ inherit golang-build
 
 DESCRIPTION="Go vendor tool that works with the standard vendor file."
 HOMEPAGE="https://github.com/kardianos/govendor"
-LICENSE="BSD-3"
+LICENSE="BSD"
 SLOT="0"
 IUSE=""
 DEPEND="dev-lang/go"

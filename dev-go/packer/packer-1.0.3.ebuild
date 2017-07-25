@@ -17,7 +17,7 @@ GOROOT="/usr/lib/go/"
 
 DESCRIPTION="Go vendor tool that works with the standard vendor file."
 HOMEPAGE="https://www.packer.io"
-LICENSE="MPL-2"
+LICENSE="MPL-2.0"
 SLOT="0"
 IUSE=""
 DEPEND="dev-go/govendor"
