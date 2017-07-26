@@ -25,5 +25,5 @@ RDEPEND="dev-go/govendor"
 
 src_install(){
 	golang_install_pkgs
-	dobini ${PN}
+	#dobini ${PN}
 }
