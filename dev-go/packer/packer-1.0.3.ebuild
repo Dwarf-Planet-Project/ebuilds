@@ -22,3 +22,8 @@ SLOT="0"
 IUSE=""
 DEPEND="dev-go/govendor"
 RDEPEND="dev-go/govendor"
+
+src_install(){
+	golang_install_pkgs
+	dobini ${PN}
+}
