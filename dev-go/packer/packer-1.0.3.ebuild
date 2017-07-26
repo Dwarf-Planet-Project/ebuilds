@@ -25,5 +25,5 @@ RDEPEND="dev-go/govendor"
 
 src_install(){
 	golang-build_src_install
-	dobini ${PN}
+	dobin ${PN}
 }
