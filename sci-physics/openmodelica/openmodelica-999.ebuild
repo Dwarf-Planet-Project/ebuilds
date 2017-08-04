@@ -13,7 +13,7 @@ SRC_URI=""
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="clang boost hwloc java system-libexpat sundials corba qt4 qt5"
+IUSE="hwloc java system-libexpat sundials corba qt4 qt5"
 
 RDEPEND="
 	sci-mathematics/lpsolve
@@ -23,7 +23,7 @@ RDEPEND="
 	sci-libs/blas-reference
 	sci-libs/lapack-reference
 	dev-libs/ocl-icd
-	sundials? ( sci-mathematics/sundials )
+	sundials? ( sci-libs/sundials )
 	sci-libs/metis
 	sci-libs/ipopt
 	sci-libs/umfpack
