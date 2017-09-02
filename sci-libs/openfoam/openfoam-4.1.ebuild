@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="5"
@@ -32,7 +32,8 @@ RDEPEND="!=sci-libs/openfoam-bin-${MY_PV}*
 	virtual/mpi
 	opendx? ( sci-visualization/opendx )
 	paraview? ( sci-visualization/paraview[development] )
-	sys-cluster/openmpi"
+	sys-cluster/openmpi
+	sci-libs/vtk"
 
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen[dot] )"
