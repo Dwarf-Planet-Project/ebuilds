@@ -36,7 +36,8 @@ RDEPEND="!=sci-libs/openfoam-bin-${MY_PV}*
 	sci-libs/vtk"
 
 DEPEND="${RDEPEND}
-	doc? ( app-doc/doxygen[dot] )"
+	doc? ( app-doc/doxygen[dot] )
+	sys-devel/flex"
 
 S=${WORKDIR}/${MY_P}
 INSDIR="/usr/$(get_libdir)/${MY_PN}/${MY_P}"
