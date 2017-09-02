@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<name>Patrick Höhn</name>
+		<email>hoehnp@gmx.de</email>
+	</maintainer>
+	<longdescription lang="en">
+		Package for version  4.1 of OpenFOAM. OpenFOAM is a known Open Source CFD programme for many years.
+	</longdescription>
+	<use>
+		<flag name="src"> </flag>
+		<flag name="paraview"> </flag>
+		<flag name="opendx"> </flag>
+	</use>
+</pkgmetadata>
