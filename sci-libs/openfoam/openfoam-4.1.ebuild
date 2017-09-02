@@ -88,7 +88,7 @@ src_compile() {
 	find wmake -name dirToString -exec rm -rf {} +
 	find wmake -name wmkdep -exec rm -rf {}+
 
-	./Allwmake || die "could not build"
+	#./Allwmake || die "could not build"
 	if use doc ; then
 		doc/Allwmake || die "could not build"
 	fi
