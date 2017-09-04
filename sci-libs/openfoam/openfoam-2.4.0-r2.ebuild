@@ -1,5 +1,6 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Id$
 
 EAPI="5"
 
@@ -11,13 +12,12 @@ MY_P="${MY_PN}-${PV}"
 
 DESCRIPTION="Open Field Operation and Manipulation - CFD Simulation Toolbox"
 HOMEPAGE="http://www.openfoam.org"
-SRC_URI="http://dl.openfoam.org/source/4-1 -> ${P}.tar.gz"
-#		http://dl.openfoam.org/third-party/4-1 -> ${P}-thirdparty.tar.gz"
+SRC_URI="http://downloads.sourceforge.net/foam/${MY_P}.tgz"
 
 LICENSE="GPL-2"
-SLOT="4"
+SLOT="2.4"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc examples opendx src"
+IUSE="doc examples opendx src paraview"
 
 RDEPEND="!=sci-libs/openfoam-bin-${MY_PV}*
 	!=sci-libs/openfoam-kernel-${MY_PV}*
@@ -31,18 +31,12 @@ RDEPEND="!=sci-libs/openfoam-bin-${MY_PV}*
 	sci-libs/scotch
 	virtual/mpi
 	opendx? ( sci-visualization/opendx )
-	sci-visualization/paraview[development]
-	sys-cluster/openmpi
-	sci-libs/vtk"
-
-DEPEND="${RDEPEND}
-	doc? ( app-doc/doxygen[dot] )
-	sys-devel/flex"
+	paraview? ( sci-visualization/paraview[development] )"
+DEPEND="${DEPEND}
+	doc? ( app-doc/doxygen[dot] )"
 
 S=${WORKDIR}/${MY_P}
 INSDIR="/usr/$(get_libdir)/${MY_PN}/${MY_P}"
-PATCHES=("${FILESDIR}/cmake_qt.patch")
-
 
 pkg_setup() {
 	# just to be sure the right profile is selected (gcc-config)
@@ -57,31 +51,31 @@ pkg_setup() {
 	elog
 	elog "And everytime you want to use OpenFOAM you have to execute startOF$(delete_all_version_separators ${MY_PV})"
 	ewarn
+	ewarn "FoamX is deprecated since ${MY_PN}-1.5! "
+	ewarn
 }
 
-src_unpack() {
-	unpack ${A}
-#	mv "${WORKDIR}/ThirdParty-$(get_major_version ${PV}).x-version-${PV}" "${WORKDIR}/ThirdParty-${PV}"
-	mv "${WORKDIR}/OpenFOAM-$(get_major_version ${PV}).x-version-${PV}" "${WORKDIR}/OpenFOAM-${PV}"
+src_prepare(){
+	epatch "${FILESDIR}/${P}-flex.patch"
 }
 
 src_configure() {
-	export WM_MPLIB=OPENMPI
+	if has_version sys-cluster/mpich2 ; then
+		export WM_MPLIB=MPICH
+	elif has_version sys-cluster/openmpi ; then
+		export WM_MPLIB=OPENMPI
+	else
+		die "You need one of the following mpi implementations: openmpi or mpich2"
+	fi
 
 	sed -i -e "s|WM_MPLIB:=OPENMPI|WM_MPLIB:="${WM_MPLIB}"|" etc/bashrc
 	sed -i -e "s|setenv WM_MPLIB OPENMPI|setenv WM_MPLIB "${WM_MPLIB}"|" etc/cshrc
 
-	sed -i 's#cd ${BASH_SOURCE%/\*/\*/\*} \&\&##' etc/bashrc
-	#sed -i -e "s|^set foamInstall = \$HOME|set foamInstall = /usr/$(get_libdir)|" etc/cshrc
+	sed -i -e "s|^foamInstall=\$HOME|foamInstall=/usr/$(get_libdir)|" etc/bashrc
+	sed -i -e "s|^set foamInstall = \$HOME|set foamInstall = /usr/$(get_libdir)|" etc/cshrc
 
-	sed -i 's#export WM_PROJECT_DIR=$WM_PROJECT_INST_DIR/$WM_PROJECT-$WM_PROJECT_VERSION#export WM_PROJECT_DIR=$WM_PROJECT_INST_DIR#' etc/bashrc
-	chmod +x etc/config.sh/functions
-
-	sed -i -e 's|^export ParaView_DIR=$WM_THIRD_PARTY_DIR/platforms/$WM_ARCH$WM_COMPILER/$paraviewArchName|export ParaView_DIR=/usr|' etc/config.sh/paraview
-	sed -i -e 's|^setenv ParaView_DIR $WM_THIRD_PARTY_DIR/platforms/$WM_ARCH$WM_COMPILER/$paraviewArchName|setenv ParaView_DIR /usr|' etc/config.csh/paraview
-
-	ParaView_VER=$(best_version sci-visualization/paraview | sed 's|sci-visualization/paraview-||')
-	sed -i "s|5.0.1|$ParaView_VER|" etc/config.sh/paraview
+	sed -i -e 's|^export ParaView_DIR=$WM_THIRD_PARTY_DIR/platforms/$WM_ARCH$WM_COMPILER/$paraviewArchName|export ParaView_DIR=/usr|' etc/config/paraview.sh
+	sed -i -e 's|^setenv ParaView_DIR $WM_THIRD_PARTY_DIR/platforms/$WM_ARCH$WM_COMPILER/$paraviewArchName|setenv ParaView_DIR /usr|' etc/config/paraview.csh
 }
 
 src_compile() {
@@ -91,7 +85,7 @@ src_compile() {
 	source etc/bashrc
 
 	find wmake -name dirToString -exec rm -rf {} +
-	find wmake -name wmkdep -exec rm -rf {} +
+	find wmake -name wmkdep -exec rm -rf {}+
 
 	./Allwmake || die "could not build"
 	if use doc ; then
