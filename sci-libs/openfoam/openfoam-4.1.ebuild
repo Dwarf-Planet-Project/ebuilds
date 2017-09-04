@@ -43,7 +43,6 @@ S=${WORKDIR}/${MY_P}
 INSDIR="/usr/$(get_libdir)/${MY_PN}/${MY_P}"
 PATCHES=("${FILESDIR}/cmake_qt.patch")
 
-
 pkg_setup() {
 	# just to be sure the right profile is selected (gcc-config)
 	if ! version_is_at_least 4.3 $(gcc-version) ; then
@@ -63,6 +62,11 @@ src_unpack() {
 	unpack ${A}
 #	mv "${WORKDIR}/ThirdParty-$(get_major_version ${PV}).x-version-${PV}" "${WORKDIR}/ThirdParty-${PV}"
 	mv "${WORKDIR}/OpenFOAM-$(get_major_version ${PV}).x-version-${PV}" "${WORKDIR}/OpenFOAM-${PV}"
+}
+
+src_prepare() {
+	pwd
+	epatch "${FILESDIR}/cmake_qt.patch"
 }
 
 src_configure() {

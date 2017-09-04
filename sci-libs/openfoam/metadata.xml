@@ -10,7 +10,6 @@
 	</longdescription>
 	<use>
 		<flag name="src"> </flag>
-		<flag name="paraview"> </flag>
 		<flag name="opendx"> </flag>
 	</use>
 </pkgmetadata>

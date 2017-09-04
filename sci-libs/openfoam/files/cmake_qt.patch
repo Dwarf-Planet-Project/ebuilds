@@ -1,7 +1,5 @@
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index f078fc4..6a790e5 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
+--- a/applications/utilities/postProcessing/graphics/PVReaders/PVblockMeshReader/PVblockMeshReader/CMakeLists.txt
++++ b/applications/utilities/postProcessing/graphics/PVReaders/PVblockMeshReader/PVblockMeshReader/CMakeLists.txt
 @@ -10,8 +10,11 @@
  CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
  
