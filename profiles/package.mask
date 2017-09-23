@@ -1,1 +1,2 @@
-dev-util/apache-thrift 
+dev-util/apache-thrift
+=sci-libs/openfoam-4.1
