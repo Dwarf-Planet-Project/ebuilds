@@ -16,7 +16,7 @@ SRC_URI="http://dl.openfoam.org/source/4-1 -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="4"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="-* ~amd64 ~x86"
 IUSE="doc examples opendx src"
 
 RDEPEND="!=sci-libs/openfoam-bin-${MY_PV}*
