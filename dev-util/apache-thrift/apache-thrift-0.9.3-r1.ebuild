@@ -3,8 +3,8 @@
 # $Header: $
 
 EAPI=5
-PYTHON_DEPEND="python? 2"
-inherit python eutils
+PYTHON_COMPAT=( python2_7 )
+inherit python-single-r1 eutils
 
 DESCRIPTION="Thrift is an interface definition language that is used to define
 and create services for numerous languages."
