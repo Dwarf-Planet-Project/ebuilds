@@ -1,6 +1,5 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -17,7 +16,7 @@ IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-		virtual/jdk:1.7
+		virtual/jdk:1.8
 		dev-java/ant-ivy:2
 		dev-java/ant-core
 		dev-java/icedtea:8"
