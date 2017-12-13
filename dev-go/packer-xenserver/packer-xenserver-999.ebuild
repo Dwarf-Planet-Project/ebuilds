@@ -48,7 +48,7 @@ src_prepare(){
 
 src_compile() {
 if [[ ${PV} = *999* ]]; then
-	mv ./github.com/xenserver/packer-builder-xenserver/* .
+	mv ./src/github.com/xenserver/packer-builder-xenserver/* .
 fi
 	export GOPATH="/usr/lib/go-gentoo/:/usr/lib/go/:${GOPATH}:${WORKDIR}/${P}"
 	./build.sh
