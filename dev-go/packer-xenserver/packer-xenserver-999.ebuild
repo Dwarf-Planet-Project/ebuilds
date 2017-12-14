@@ -47,9 +47,35 @@ src_prepare(){
 }
 
 src_compile() {
-if [[ ${PV} = *999* ]]; then
-	mv ./src/github.com/xenserver/packer-builder-xenserver/* .
-fi
+	ls -lah
+	cp -r src/github.com/xenserver/packer-builder-xenserver/* .
 	export GOPATH="/usr/lib/go-gentoo/:/usr/lib/go/:${GOPATH}:${WORKDIR}/${P}"
-	./build.sh
+
+	XC_OS=${XC_OS:-$(go env GOOS)}
+	XC_ARCH=${XC_ARCH:-$(go env GOARCH)}
+	GOPATH=${GOPATH:-$(go env GOPATH)}
+
+
+	gox \
+    -os="${XC_OS}" \
+    -arch="${XC_ARCH}" \
+    -output "pkg/{{.OS}}_{{.Arch}}/packer-{{.Dir}}" \
+    ./... \
+    || exit 1
+
+	# Move all the compiled things to the $GOPATH/bin
+	GOPATH=${GOPATH:-$(go env GOPATH)}
+	
+	OLDIFS=$IFS
+	IFS=: MAIN_GOPATH=($GOPATH)
+	IFS=$OLDIFS
+
+# Copy our OS/Arch to the bin/ directory
+	echo "==> Copying binaries for this platform..."
+	DEV_PLATFORM="./pkg/$(go env GOOS)_$(go env GOARCH)"
+	for F in $(find ${DEV_PLATFORM} -mindepth 1 -maxdepth 1 -type f); do
+    	cp ${F} bin/
+    	cp ${F} ${MAIN_GOPATH}/bin/
+	done
+
 }
