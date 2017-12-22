@@ -103,7 +103,7 @@ src_unpack() {
 	unpack ${A}
 
 	# Unpack language packs
-	mozlinguas_src_unpack
+	# mozlinguas_src_unpack
 }
 
 src_prepare() {
