@@ -1,17 +1,17 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
 inherit git-r3 qmake-utils
 
-DESCRIPTION="NavitConfigurator is a third party application for editing the navit.xml file on your PC"
-HOMEPAGE=""http://sourceforge.net/p/navitconfigurat/wiki/Wiki%20for%20NavitConfigurator/
+DESCRIPTION="NavitConfigurator is a 3rd party app for editing the navit.xml file on your PC"
+HOMEPAGE=""https://sourceforge.net/p/navitconfigurat/wiki/Wiki%20for%20NavitConfigurator/
 SRC_URI=""
 
-EGIT_REPO_URI="git://git.code.sf.net/p/navitconfigurat/code"
+EGIT_REPO_URI="https://git.code.sf.net/p/navitconfigurat/code"
 
-LICENSE="LGPL3"
+LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
