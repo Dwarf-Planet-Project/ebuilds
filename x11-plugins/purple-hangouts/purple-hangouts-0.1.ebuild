@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=5
 
@@ -15,14 +14,15 @@ SRC_URI="http://dwarf-planet-project.github.io/purple-hangouts-0.1.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="amd64"
 IUSE=""
 
 RDEPEND=">=dev-libs/protobuf-c-1.1.1
 	dev-libs/json-glib
 	dev-libs/nss
 	sys-libs/zlib
-	>=net-im/pidgin-2.10.12"
+	>=net-im/pidgin-2.10.12
+	net-libs/libaccounts-glib"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
