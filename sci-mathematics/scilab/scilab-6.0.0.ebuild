@@ -22,12 +22,8 @@ IUSE="bash-completion debug doc emf fftw +gui +matio mpi nls openmp
 	static-libs test tk +umfpack +xcos"
 REQUIRED_USE="xcos? ( gui ) doc? ( gui )"
 
-LINGUAS="fr_FR zh_CN zh_TW ru_RU ca_ES de_DE es_ES pt_BR ja_JP it_IT uk_UA pl_PL cs_CZ"
 LINGUAS_DOC="fr_FR pt_BR ja_JP ru_RU"
 
-for l in ${LINGUAS}; do
-	IUSE="${IUSE} linguas_${l}"
-done
 
 CDEPEND="
 	dev-libs/libpcre
