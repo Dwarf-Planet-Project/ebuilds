@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
@@ -8,7 +8,7 @@ RESTRICT="test"
 JAVA_PKG_OPT_USE="gui"
 VIRTUALX_REQUIRED="manual"
 
-inherit eutils autotools bash-completion-r1 check-reqs fdo-mime flag-o-matic \
+inherit eutils autotools bash-completion-r1 check-reqs xdg-utils flag-o-matic \
 	fortran-2 java-pkg-opt-2 pax-utils toolchain-funcs virtualx
 
 DESCRIPTION="Scientific software package for numerical computations"
@@ -23,7 +23,6 @@ IUSE="bash-completion debug doc emf fftw +gui +matio mpi nls openmp
 REQUIRED_USE="xcos? ( gui ) doc? ( gui )"
 
 LINGUAS_DOC="fr_FR pt_BR ja_JP ru_RU"
-
 
 CDEPEND="
 	dev-libs/libpcre
@@ -45,7 +44,7 @@ CDEPEND="
 	fftw? ( sci-libs/fftw:3.0 )
 	gui? (
 		dev-java/avalon-framework:4.2
-		>=dev-java/batik-1.8-r2:1.8
+		>=dev-java/batik-1.9
 		dev-java/commons-io:1
 		dev-java/commons-logging:0
 		>=dev-java/flexdock-1.2.4:0
@@ -201,7 +200,7 @@ src_configure() {
 	export LAPACK_LIBS="$($(tc-getPKG_CONFIG) --libs lapack)"
 	export F77_LDFLAGS="${LDFLAGS}"
 
-	sed -i "s/org.apache.lucene.queryparser.classic.QueryParser/org.apache.lucene.queryParser.surround.parser.QueryParser/g" ${WORKDIR}/${P}/configure
+	sed -i "s/org.apache.lucene.queryparser.classic.QueryParser/org.apache.lucene.queryParser.surround.parser.QueryParser/g" "${WORKDIR}/${P}/configure"
 
 	econf \
 		--enable-relocatable \
