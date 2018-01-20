@@ -17,7 +17,7 @@ RESTRICT="mirror"
 
 LICENSE="paraview GPL-2"
 KEYWORDS="~amd64 ~x86"
-SLOT="0"
+SLOT="4"
 IUSE="boost cg coprocessing development doc examples ffmpeg mpi mysql nvcontrol plugins python qt4 sqlite tcl test tk"
 RESTRICT="test"
 
