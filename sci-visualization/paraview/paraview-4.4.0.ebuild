@@ -17,7 +17,7 @@ RESTRICT="mirror"
 
 LICENSE="paraview GPL-2"
 KEYWORDS="~amd64 ~x86"
-SLOT="4"
+SLOT="0"
 IUSE="boost cg coprocessing development doc examples ffmpeg mpi mysql nvcontrol plugins python qt4 sqlite tcl test tk"
 RESTRICT="test"
 
@@ -61,7 +61,7 @@ RDEPEND="
 		dev-python/twisted-core
 		dev-python/zope-interface[${PYTHON_USEDEP}]
 		mpi? ( dev-python/mpi4py )
-		qt4? ( dev-python/PyQt4[opengl,webkit,${PYTHON_USEDEP}] )
+		qt4? ( dev-python/PyQt4[${PYTHON_USEDEP}] )
 	)
 	qt4? (
 		dev-qt/designer:4
