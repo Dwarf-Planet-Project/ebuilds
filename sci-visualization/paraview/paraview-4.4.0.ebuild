@@ -28,7 +28,7 @@ RDEPEND="
 	dev-libs/expat
 	>=dev-libs/jsoncpp-0.10.1
 	dev-libs/libxml2:2
-	dev-libs/protobuf
+	>dev-libs/protobuf-3.2.0
 	media-libs/freetype
 	media-libs/libpng:0
 	media-libs/libtheora
@@ -94,8 +94,10 @@ src_prepare() {
 		"${FILESDIR}"/${PN}-4.3.1-protobuf-2.6.patch \
 		"${FILESDIR}"/${P}-removesqlite.patch \
 		"${FILESDIR}"/${P}-fix_vtk_STLReader.patch \
+		"${FILESDIR}"/${P}-fix_vtkSMSettings.patch \
 		"${FILESDIR}"/${P}-fix-CMake_gcc6.patch \
-		"${FILESDIR}"/${P}-fix_qt_CMakeLists.patch 
+		"${FILESDIR}"/${P}-fix_proto_version.patch \
+		"${FILESDIR}"/${P}-fix_qt_CMakeLists.patch
 
 	# lib64 fixes
 	sed -i \
