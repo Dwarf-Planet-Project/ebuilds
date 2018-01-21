@@ -13,7 +13,6 @@ mai mk ml mr ms nb-NO nl nn-NO or pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq
 sr sv-SE ta te th tr uk uz vi xh zh-CN zh-TW )
 
 # Patch version
-PATCH="firefox-56.0-patches-07"
 MOZ_HTTP_URI="https://archive.mozilla.org/pub/${PN}/releases"
 
 MOZCONFIG_OPTIONAL_WIFI=1
@@ -30,10 +29,8 @@ LICENSE="MPL-2.0 GPL-2 LGPL-2.1"
 IUSE="bindist eme-free +gmp-autoupdate hardened hwaccel jack nsplugin pgo selinux test"
 RESTRICT="!bindist? ( bindist )"
 
-PATCH_URIS=( https://dev.gentoo.org/~{anarchy,axs,polynomial-c}/mozilla/patchsets/${PATCH}.tar.xz )
 SRC_URI="
-	http://eu.basilisk-browser.org/release/basilisk-latest.linux64.tar.bz2
-	${PATCH_URIS[@]}"
+	"
 
 ASM_DEPEND=">=dev-lang/yasm-1.1"
 
