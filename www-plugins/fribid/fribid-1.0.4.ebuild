@@ -1,3 +1,4 @@
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=4
@@ -6,9 +7,9 @@ inherit eutils vcs-snapshot
 
 DESCRIPTION="A browser plugin to manage Swedish BankID:s"
 HOMEPAGE="http://fribid.se"
-SRC_URI="http://github.com/samuellb/${PN}/tarball/v${PV} -> ${P}.tar.gz"
+SRC_URI="https://github.com/samuellb/${PN}/tarball/v${PV} -> ${P}.tar.gz"
 
-LICENSE="MIT MPL GPL-2"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~*"
 IUSE="smartcard pkcs11 dev"
@@ -18,7 +19,7 @@ DEPEND=">=dev-libs/openssl-0.9.8
 		>=dev-libs/libp11-0.2.7
 		smartcard? ( >=sys-apps/pcsc-lite-1.6.1 )
 		dev? ( >=dev-libs/opensc-0.11.13 )
-		pkcs11? ( >=dev-libs/engine_pkcs11-0.1.8 )"
+		pkcs11? ( dev-libs/libp11 )"
 RDEPEND="${DEPEND}"
 
 src_configure() {
