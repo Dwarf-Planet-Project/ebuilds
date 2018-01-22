@@ -1,13 +1,11 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=5
 
-PYTHON_DEPEND="2:2.7"
-RESTRICT_PYTHON_ABIS="3.*"
+PYTHON_COMPAT=( python2_7 )
 
-inherit eutils python scons-utils
+inherit eutils python-r1 scons-utils
 
 DESCRIPTION="Flexible Isometric Free Engine, 2D"
 HOMEPAGE="http://fifengine.de"
@@ -15,7 +13,7 @@ SRC_URI="http://downloads.sourceforge.net/project/${PN}/active/src/${PN}_${PV}.t
 
 LICENSE="GPL-2"
 
-KEYWORDS=""
+KEYWORDS="~amd64"
 SLOT="0"
 IUSE="debug profile"
 
