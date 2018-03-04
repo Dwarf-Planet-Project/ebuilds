@@ -20,7 +20,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="bash-completion debug doc emf fftw +gui +matio mpi nls openmp
 	static-libs test tk +umfpack +xcos linguas_de linguas_de_DE linguas_sv
-	linguas_sv_SE linguas_en_GB"
+	linguas_sv_SE linguas_en_GB linguas_en"
 REQUIRED_USE="xcos? ( gui ) doc? ( gui )"
 
 LINGUAS_DOC="fr_FR pt_BR ja_JP ru_RU"
