@@ -19,11 +19,10 @@ LICENSE="CeCILL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="bash-completion debug doc emf fftw +gui +matio mpi nls openmp
-	static-libs test tk +umfpack +xcos linguas_de linguas_de_DE linguas_sv
-	linguas_sv_SE linguas_en_GB linguas_en linguas_bn linguas_bn_IN
-	linguas_fr_FR linguas_pt_BR"
+	static-libs test tk +umfpack +xcos "
 REQUIRED_USE="xcos? ( gui ) doc? ( gui )"
 
+LINGUAS="de de_DE sv sv_SE en_GB en bn bn_IN fr_FR pt_BR ja_JP"
 LINGUAS_DOC="fr_FR pt_BR ja_JP ru_RU"
 
 CDEPEND="
