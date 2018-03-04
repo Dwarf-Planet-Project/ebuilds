@@ -18,11 +18,11 @@ SRC_URI="http://www.scilab.org/download/${PV}/${P}-src.tar.gz"
 LICENSE="CeCILL-2"
 SLOT="0"
 KEYWORDS="~amd64"
+LINGUAS="de de_DE sv sv_SE en_GB en bn bn_IN fr_FR pt_BR ja_JP"
 IUSE="bash-completion debug doc emf fftw +gui +matio mpi nls openmp
 	static-libs test tk +umfpack +xcos $LINGUAS"
 REQUIRED_USE="xcos? ( gui ) doc? ( gui )"
 
-LINGUAS="de de_DE sv sv_SE en_GB en bn bn_IN fr_FR pt_BR ja_JP"
 LINGUAS_DOC="fr_FR pt_BR ja_JP ru_RU"
 
 CDEPEND="
