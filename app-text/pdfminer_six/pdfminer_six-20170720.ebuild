@@ -2,18 +2,24 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=5
-PYTHON_COMPAT=( python2_7 pypy python3_5)
+PYTHON_COMPAT=( python2_7 pypy python3_5 python3_4)
 
 inherit distutils-r1
 
 DESCRIPTION="Python tool for extracting information from PDF documents"
 HOMEPAGE="http://www.unixuser.org/~euske/python/pdfminer/ https://pypi.org/project/pdfminer/"
-SRC_URI="mirror://pypi/p/${PN}/${P}.tar.gz"
+SRC_URI="mirror://pypi/p/pdfminer.six/pdfminer.six-${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE="doc examples"
+DEPEND="!app-text/pdfminer"
+
+src_unpack(){
+	unpack pdfminer.six-${PV}.tar.gz
+	mv pdfminer.six-${PV} pdfminer_six-${PV}
+}
 
 python_compile_all(){
 	use examples && emake -C samples all
