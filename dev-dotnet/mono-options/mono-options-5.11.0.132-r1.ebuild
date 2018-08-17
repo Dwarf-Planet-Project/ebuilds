@@ -12,7 +12,7 @@ RESTRICT="mirror"
 SLOT="0"
 
 USE_DOTNET="net45"
-IUSE="+${USE_DOTNET} gac nupkg"
+IUSE="+${USE_DOTNET} gac nupkg debug"
 
 DESCRIPTION="A Getopt::Long-inspired option parsing library for C#"
 HOMEPAGE="http://tirania.org/blog/archive/2008/Oct-14.html"
