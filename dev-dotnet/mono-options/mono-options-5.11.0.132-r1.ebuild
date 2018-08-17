@@ -45,8 +45,8 @@ src_compile() {
 	else
 		PARAMETERS=
 	fi
-	#mcs ${PARAMETERS} -r:System.Core mcs/class/Mono.Options/Mono.Options/Options.cs AssemblyInfo.cs -t:library -out:"Mono.Options.dll" || die "compilation failed"
-	csc ${PARAMETERS} -r:System.Core.dll mcs/class/Mono.Options/Mono.Options/Options.cs AssemblyInfo.cs -t:library -out:"Mono.Options.dll" || die "compilation failed"
+	mcs ${PARAMETERS} -r:System.Core mcs/class/Mono.Options/Mono.Options/Options.cs AssemblyInfo.cs -t:library -out:"Mono.Options.dll" || die "compilation failed"
+	#csc ${PARAMETERS} -r:System.Core.dll mcs/class/Mono.Options/Mono.Options/Options.cs AssemblyInfo.cs -t:library -out:"Mono.Options.dll" || die "compilation failed"
 	enuspec "${FILESDIR}/Mono.Options.nuspec"
 }
 
