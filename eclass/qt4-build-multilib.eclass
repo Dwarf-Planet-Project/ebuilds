@@ -522,14 +522,14 @@ qt4-build-multilib_src_prepare() {
 	prune_libtool_files
 }
 
--# @FUNCTION: qt4-build-multilib_pkg_postinst
+# @FUNCTION: qt4-build-multilib_pkg_postinst
 # @DESCRIPTION:
 # Regenerate configuration after installation or upgrade/downgrade.
 qt4-build-multilib_pkg_postinst() {
 	qt4_regenerate_global_qconfigs
 }
 
--# @FUNCTION: qt4-build-multilib_pkg_postrm
+# @FUNCTION: qt4-build-multilib_pkg_postrm
 # @DESCRIPTION:
 # Regenerate configuration when a module is completely removed.
 qt4-build-multilib_pkg_postrm() {
@@ -539,7 +539,7 @@ qt4-build-multilib_pkg_postrm() {
 -
 ######  Public helpers  ######
 
--# @FUNCTION: qt_use
+# @FUNCTION: qt_use
 # @USAGE: <flag> [feature] [enableval]
 # @DESCRIPTION:
 # <flag> is the name of a flag in IUSE.
@@ -553,7 +553,7 @@ qt_use() {
 	usex "$1" "${3:+-$3}-${2:-$1}" "-no-${2:-$1}"
 }
 
--# @FUNCTION: qt_native_use
+# @FUNCTION: qt_native_use
 # @USAGE: <flag> [feature] [enableval]
 # @DESCRIPTION:
 # <flag> is the name of a flag in IUSE.
@@ -571,7 +571,7 @@ qt_native_use() {
 -
 ######  Internal functions  ######
 
--# @FUNCTION: qt4_prepare_env
+# @FUNCTION: qt4_prepare_env
 # @INTERNAL
 # @DESCRIPTION:
 # Prepares the environment for building Qt.
@@ -599,7 +599,7 @@ qt4_prepare_env() {
 	unset QMAKESPEC
 }
 
--# @FUNCTION: qt4_foreach_target_subdir
+# @FUNCTION: qt4_foreach_target_subdir
 # @INTERNAL
 # @DESCRIPTION:
 # Executes the given command inside each directory listed in QT4_TARGET_DIRECTORIES.
@@ -619,7 +619,7 @@ qt4_foreach_target_subdir() {
 	return ${ret}
 }
 
--# @FUNCTION: qt4_symlink_tools_to_build_dir
+# @FUNCTION: qt4_symlink_tools_to_build_dir
 # @INTERNAL
 # @DESCRIPTION:
 # Symlinks qtcore tools to BUILD_DIR,
@@ -641,7 +641,7 @@ qt4_symlink_tools_to_build_dir() {
 	popd >/dev/null || die
 }
 
--# @FUNCTION: qt4_qmake
+# @FUNCTION: qt4_qmake
 # @INTERNAL
 # @DESCRIPTION:
 # Helper function that runs qmake in the current target subdir.
@@ -657,7 +657,7 @@ qt4_qmake() {
 		|| die "qmake failed (${projectdir#${S}/})"
 }
 
--# @FUNCTION: qt4_install_module_qconfigs
+# @FUNCTION: qt4_install_module_qconfigs
 # @INTERNAL
 # @DESCRIPTION:
 # Creates and installs gentoo-specific ${PN}-qconfig.{h,pri} files.
@@ -680,7 +680,7 @@ qt4_install_module_qconfigs() {
 	fi
 }
 
--# @FUNCTION: qt4_regenerate_global_qconfigs
+# @FUNCTION: qt4_regenerate_global_qconfigs
 # @INTERNAL
 # @DESCRIPTION:
 # Generates Gentoo-specific qconfig.{h,pri} according to the build configuration.
@@ -739,7 +739,7 @@ qt4_regenerate_global_qconfigs() {
 	fi
 }
 
--# @FUNCTION: qt4_symlink_framework_headers
+# @FUNCTION: qt4_symlink_framework_headers
 # @DESCRIPTION:
 # On OS X we need to add some symlinks when frameworks are being
 # used, to avoid complications with some more or less stupid packages.
@@ -782,7 +782,7 @@ qt4_symlink_framework_headers() {
 	fi
 }
 
--# @FUNCTION: qt4_get_mkspec
+# @FUNCTION: qt4_get_mkspec
 # @INTERNAL
 # @DESCRIPTION:
 # Returns the right mkspec for the current CHOST/CXX combination.
