@@ -294,7 +294,7 @@ qt4-build-multilib_src_prepare() {
 	epatch_user
 }
 
--qt4_multilib_src_configure() {
+qt4_multilib_src_configure() {
 	qt4_prepare_env
 
 	qt4_symlink_tools_to_build_dir
@@ -434,19 +434,19 @@ qt4-build-multilib_src_prepare() {
 	qt4_foreach_target_subdir qt4_qmake
 }
 
--qt4_multilib_src_compile() {
+qt4_multilib_src_compile() {
 	qt4_prepare_env
 
 	qt4_foreach_target_subdir emake
 }
 
--qt4_multilib_src_test() {
+qt4_multilib_src_test() {
 	qt4_prepare_env
 
 	qt4_foreach_target_subdir emake -j1 check
 }
 
--qt4_multilib_src_install() {
+qt4_multilib_src_install() {
 	qt4_prepare_env
 
 	qt4_foreach_target_subdir emake INSTALL_ROOT="${D}" install
@@ -489,7 +489,7 @@ qt4-build-multilib_src_prepare() {
 	qt4_symlink_framework_headers
 }
 
--qt4_multilib_src_install_all() {
+qt4_multilib_src_install_all() {
 	if [[ ${PN} == qtcore ]]; then
 		# include gentoo-qconfig.h at the beginning of Qt{,Core}/qconfig.h
 		if use aqua && [[ ${CHOST#*-darwin} -ge 9 ]]; then
