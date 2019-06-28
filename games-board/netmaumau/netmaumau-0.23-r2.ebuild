@@ -19,9 +19,9 @@ IUSE="+espeak"
 RDEPEND="
 	app-text/discount
 	dev-libs/qjson
-	dev-qt/qtcore:5[exceptions]
-	dev-qt/qtgui:5[exceptions]
-	dev-qt/qtsvg:5[exceptions]
+	dev-qt/qtcore:5
+	dev-qt/qtgui:5
+	dev-qt/qtsvg:5
 	espeak? ( || ( app-accessibility/espeak[portaudio] app-accessibility/espeak[pulseaudio] ) )
 	games-server/netmaumau:0/14[-dedicated]
 "
