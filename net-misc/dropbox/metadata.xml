@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <upstream>
+    <bugs-to>mailto:hoehnp@gmx.de</bugs-to>
+  </upstream>
+  <use>
+    <flag name="librsync-bundled">Use bundled librsync library</flag>
+  </use>
+  <maintainer type="project">
+    <email>hoehnp@gmx.de</email>
+  </maintainer>
+</pkgmetadata>
+
