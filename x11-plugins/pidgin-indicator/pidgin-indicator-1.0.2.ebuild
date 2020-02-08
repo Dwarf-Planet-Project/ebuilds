@@ -17,7 +17,7 @@ IUSE=""
 RDEPEND="dev-libs/glib:2
 	dev-libs/libappindicator:3
 	net-im/pidgin[gtk]
-	x11-libs/gtk+:2"
+	x11-libs/gtk+:3"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
