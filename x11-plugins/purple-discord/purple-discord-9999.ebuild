@@ -25,12 +25,3 @@ eapply_user
 	sed -i "s,convert, TMPDIR='${TEMP}' convert -define registry:temporary-path='${TEMP}',g" Makefile
 }
 
-pkg_postinst() {
-	if use X; then
-		if [[ -d "${ROOT}"usr/share/fonts/misc ]] ; then
-			einfo ">>> Running mkfontdir on ${ROOT}usr/share/fonts/misc"
-			mkfontdir "${ROOT}"usr/share/fonts/misc
-		fi
-		font_pkg_postinst
-	fi
-}
