@@ -23,18 +23,6 @@ src_prepare() {
 eapply_user
 	default
 	sed -i "s,convert, TMPDIR='${TEMP}' convert -define registry:temporary-path='${TEMP}',g" Makefile
-	#sed -i "s,convert,rsvg-convert,g" Makefile
-	#sed -i "s,none discord-alt-logo.svg,none MVG:discord-alt-logo.svg,g" Makefile
-	#sed -i "s,resize,size,g" Makefile
-	#sed -i "133s/install-icons//" Makefile
-	#sed -i "150d" Makefile
-	#sed -i "150d" Makefile
-	#sed -i "150d" Makefile
-	#sed -i "147d" Makefile
-	#sed -i "147d" Makefile
-	#sed -i "147d" Makefile
-	#sed -i "147i\\\techo  \$\(DISCORD_ICONS_DEST\)" Makefile
-	#sed -i "147i\\\techo  \$\(DIRPERM\)" Makefile
 }
 
 pkg_postinst() {
