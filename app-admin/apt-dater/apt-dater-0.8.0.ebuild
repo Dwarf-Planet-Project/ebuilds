@@ -1,6 +1,5 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
 
 EAPI=4
 
@@ -8,7 +7,7 @@ inherit eutils
 
 DESCRIPTION="A terminal-based remote package update manager for .deb and .rpm based Linux Distributions"
 HOMEPAGE="http://www.ibh.de/apt-dater"
-SRC_URI="https://github.com/hoehnp/apt-dater/archive/v${PV}.tar.gz" 
+SRC_URI="https://github.com/hoehnp/apt-dater/archive/v${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
