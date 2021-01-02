@@ -1,8 +1,8 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
-EAPI=5
-inherit eutils versionator
+
+EAPI=7
+inherit eutils
 SR=SR2
 RNAME="luna"
 SRC_BASE="http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/${RNAME}/${SR}/eclipse-java-${RNAME}-${SR}-linux-gtk"
@@ -34,4 +34,3 @@ newins "${T}"/eclipserc-bin-${SLOT} eclipserc-bin-${SLOT}
 newbin "${T}"/eclipse-bin-${SLOT} eclipse
 make_desktop_entry "eclipse-bin-${SLOT}" "Eclipse ${PV} (bin)" "${dest}/icon.xpm"a
 }
-
