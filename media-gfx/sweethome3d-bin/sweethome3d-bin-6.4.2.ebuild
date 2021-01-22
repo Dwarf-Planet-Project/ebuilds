@@ -31,6 +31,7 @@ src_unpack() {
 }
 
 src_prepare() {
+    eapply_user
 	epatch "${FILESDIR}/${P}-javahome.patch"
 }
 
