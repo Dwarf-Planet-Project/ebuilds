@@ -11,7 +11,7 @@ EGIT_REPO_URI="${HOMEPAGE}"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64"
 IUSE="libressl"
 
 DEPEND="net-im/pidgin
