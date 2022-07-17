@@ -32,7 +32,6 @@ if [[ ${CATEGORY} != cross-* ]] ; then
 	PDEPEND="${PDEPEND} elibc_glibc? ( >=sys-libs/glibc-2.8 )"
 fi
 
-EPATCH_EXCLUDE+=" 02_all_gcc48_config.in.patch"
 src_prepare() {
 	if has_version '<sys-libs/glibc-2.12' ; then
 		ewarn "Your host glibc is too old; disabling automatic fortify."
@@ -40,6 +39,7 @@ src_prepare() {
 		EPATCH_EXCLUDE+=" 10_all_default-fortify-source.patch"
 	fi
 
+	EPATCH_EXCLUDE+=" 02_all_gcc48_config.in.patch"
 	toolchain_src_prepare
 
 	use vanilla && return 0
