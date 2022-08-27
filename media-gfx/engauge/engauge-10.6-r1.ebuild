@@ -68,10 +68,6 @@ src_install() {
 	doicon src/img/engauge-digitizer.svg
 	make_desktop_entry engauge "Engauge Digitizer" engauge-digitizer Graphics
 
-	# Install qt help files
-	dodoc dev/flatpak/engauge.qch
-	docompress -x "${EPREFIX}"/usr/share/doc/${PF}/engauge.qch
-
 	use doc && dodoc -r doc/.
 	if use examples; then
 		dodoc -r samples
