@@ -29,7 +29,8 @@ DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/engauge-digitizer-${PV}
 
-PATCHES=( "${FILESDIR}/${P}-qt-5.11.patch" )
+PATCHES=( "${FILESDIR}/${P}-qt-5.11.patch"
+          "${FILESDIR}/${P}.patch" )
 
 src_prepare() {
 	default
