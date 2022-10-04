@@ -1,15 +1,15 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=8
 
-inherit eutils versionator
+inherit desktop
 
 MY_PN=${PN/-bin}
 MY_P="${MY_PN}-${PV}"
 DESCRIPTION="A free and open source desktop alternative to Microsoft Project"
 HOMEPAGE="http://www.projectlibre.org/"
-SRC_URI="mirror://sourceforge/${MY_PN}/ProjectLibre/$(get_version_component_range 1-2)/${MY_P}.tar.gz
+SRC_URI="mirror://sourceforge/${MY_PN}/ProjectLibre/${PV}/${MY_P}.tar.gz
 	https://sourceforge.net/p/projectlibre/code/ci/master/tree/projectlibre_build/resources/${MY_PN}.desktop?format=raw -> ${MY_PN}.desktop
 	https://sourceforge.net/p/projectlibre/code/ci/master/tree/projectlibre_build/resources/${MY_PN}.png?format=raw -> ${MY_PN}.png"
 
@@ -31,6 +31,7 @@ src_unpack() {
 }
 
 src_prepare() {
+	eapply_user
 	sed -i \
 		-e "/^OPENPROJ_HOME0=/s:=.*:=/opt/${MY_PN}:" \
 		${MY_PN}.sh || die
