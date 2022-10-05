@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit desktop
+inherit desktop xdg
 
 MY_PN=${PN/-bin}
 MY_P="${MY_PN}-${PV}"
@@ -50,4 +50,12 @@ src_install() {
 	domenu ../${MY_PN}.desktop
 	#newicon ../${MY_P}.png ${MY_PN}.png || die
 	#newmenu ../${MY_P}.desktop ${MY_PN}.desktop || die
+}
+
+pkg_postinst() {
+	xdg_desktop_database_update
+}
+
+pkg_postrm(){
+	xdg_desktop_database_update
 }
