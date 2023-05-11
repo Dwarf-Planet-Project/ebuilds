@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
+PYTHON_COMPAT=( python2_7 python3_{9,10,11} )
 
 inherit cmake-utils python-r1 virtualx git-r3
 
