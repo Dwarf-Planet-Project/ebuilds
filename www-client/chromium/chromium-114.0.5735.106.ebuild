@@ -19,7 +19,7 @@ inherit python-any-r1 qmake-utils readme.gentoo-r1 toolchain-funcs virtualx xdg-
 DESCRIPTION="Open-source version of Google Chrome web browser"
 HOMEPAGE="https://chromium.org/"
 PATCHSET_URI_PPC64="https://quickbuild.io/~raptor-engineering-public"
-PATCHSET_NAME_PPC64="chromium_113.0.5672.63-2raptor0~deb11u1.debian"
+PATCHSET_NAME_PPC64="chromium_112.0.5615.49-2raptor0~deb11u1.debian"
 SRC_URI="https://commondatastorage.googleapis.com/chromium-browser-official/${P}.tar.xz
 	https://dev.gentoo.org/~sam/distfiles/www-client/chromium/chromium-112-gcc-13-patches.tar.xz
 	ppc64? (
@@ -30,7 +30,7 @@ SRC_URI="https://commondatastorage.googleapis.com/chromium-browser-official/${P}
 
 LICENSE="BSD"
 SLOT="0/stable"
-KEYWORDS="amd64 arm64 ~ppc64"
+KEYWORDS="~amd64 ~arm64 ~ppc64"
 IUSE="+X component-build cups cpu_flags_arm_neon debug gtk4 +hangouts headless kerberos libcxx lto +official pax-kernel pgo pic +proprietary-codecs pulseaudio qt5 screencast selinux +suid +system-av1 +system-ffmpeg +system-harfbuzz +system-icu +system-png vaapi wayland widevine"
 REQUIRED_USE="
 	component-build? ( !suid !libcxx )
@@ -294,8 +294,8 @@ pkg_setup() {
 
 	if [[ ${MERGE_TYPE} != binary ]]; then
 		local -x CPP="$(tc-getCXX) -E"
-		if tc-is-gcc && ! ver_test "$(gcc-version)" -ge 12; then
-			die "At least gcc 12 is required"
+		if tc-is-gcc && ! ver_test "$(gcc-version)" -ge 10.4; then
+			die "At least gcc 10.4 is required"
 		fi
 		if use pgo && tc-is-cross-compiler; then
 			die "The pgo USE flag cannot be used when cross-compiling"
@@ -331,8 +331,23 @@ src_prepare() {
 		"chrome/browser/media/router/media_router_feature.cc" || die
 
 	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0002-perfetto.patch" || die
+	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0004-swiftshader.patch" || die
+	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0007-misc.patch" || die
+	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0008-dawn.patch" || die
+	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0009-base.patch" || die
+	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0010-components.patch" || die
+	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0011-s2cellid.patch" || die
 	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0012-webrtc-base64.patch" || die
 	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0013-quiche.patch" || die
+	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0015-net.patch" || die
+	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0016-cc-targetproperty.patch" || die
+	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0017-gpu_feature_info.patch" || die
+	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0018-encounteredsurfacetracker.patch" || die
+	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0019-documentattachmentinfo.patch" || die
+	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0020-pdfium.patch" || die
+	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0021-gcc-copy-list-init-net-HostCache.patch" || die
+	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0022-gcc-ambiguous-ViewTransitionElementId-type.patch" || die
+	rm "${WORKDIR}/chromium-112-gcc-13-patches/chromium-112-gcc-13-0023-gcc-incomplete-type-v8-subtype.patch" || die
 
 	local PATCHES=(
 		#"${WORKDIR}/patches"
@@ -343,13 +358,10 @@ src_prepare() {
 		"${FILESDIR}/chromium-111-InkDropHost-crash.patch"
 		"${FILESDIR}/chromium-use-oauth2-client-switches-as-default.patch"
 		"${FILESDIR}/chromium-cross-compile.patch"
-		"${FILESDIR}/chromium-113-compiler.patch"
 		"${WORKDIR}/chromium-112-gcc-13-patches"
 		"${FILESDIR}/chromium-113-swiftshader-cstdint.patch"
-		"${FILESDIR}/chromium-113-system-zlib.patch"
-		"${FILESDIR}/chromium-113-web_view_impl-cstring.patch"
-		"${FILESDIR}/chromium-113-std-monospace.patch"
 		"${FILESDIR}/chromium-113-gcc-13-0001-vulkanmemoryallocator.patch"
+		"${FILESDIR}/chromium-114-compiler.patch"
 	)
 
 	if use ppc64 ; then
@@ -577,7 +589,6 @@ src_prepare() {
 		third_party/utf
 		third_party/vulkan
 		third_party/wayland
-		third_party/web-animations-js
 		third_party/webdriver
 		third_party/webgpu-cts
 		third_party/webrtc
