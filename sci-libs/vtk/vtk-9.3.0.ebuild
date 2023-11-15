@@ -157,11 +157,6 @@ DEPEND="
 "
 BDEPEND="virtual/pkgconfig"
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-9.2.5-Add-include-cstdint-to-compile-with-gcc-13.patch
-	"${FILESDIR}"/${PN}-9.2.5-More-include-cstdint-to-compile-with-gcc13.patch
-)
-
 DOCS=( CONTRIBUTING.md README.md )
 
 vtk_check_reqs() {
