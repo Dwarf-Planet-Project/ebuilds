@@ -5,4 +5,7 @@
 <email>hoehnp@gmx.de</email>
 <name>Patrick Höhn</name>
 </maintainer>
+<use>
+<flag name="gtk3">Use GTK3 interface bindings</flag>
+</use>
 </pkgmetadata>
