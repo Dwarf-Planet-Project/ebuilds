@@ -21,7 +21,7 @@ IUSE=""
 
 DEPEND="
 	>=dev-qt/qtxmlpatterns-5.12.1-r1:5[qml(+)]
-	>=kde-frameworks/plasma-5.60.0:5
+	>=kde-plasma/libplasma-5.60.0:5
 "
 RDEPEND="${DEPEND}"
 
