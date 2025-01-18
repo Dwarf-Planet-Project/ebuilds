@@ -54,7 +54,7 @@ fi
 PATCHES=(
 #	"${FILESDIR}/${P}-allow_bwlimit_0.patch" #731306
 	"${FILESDIR}/${P}-zstd_see_token.patch" #733084
-	"${FILESDIR}/${P}-CVE-2024-12084.patch"
+#	"${FILESDIR}/${P}-CVE-2024-12084.patch"
     "${FILESDIR}/${P}-CVE-2024-12085.patch"
     "${FILESDIR}/${P}-CVE-2024-12086-1.patch"
     "${FILESDIR}/${P}-CVE-2024-12086-2.patch"
