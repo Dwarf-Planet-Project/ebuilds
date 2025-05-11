@@ -38,6 +38,7 @@ BDEPEND="
 PATCHES=(
 	"${FILESDIR}"/${PN}-0.10.1-matplotlib-3.6.0.patch
 	"${FILESDIR}"/${PN}-0.10.1-matplotlib-3.7.0.patch
+	"${FILESDIR}"/fix_common_texification.patch
 )
 
 distutils_enable_tests pytest
