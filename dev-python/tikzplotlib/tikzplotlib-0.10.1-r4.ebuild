@@ -13,7 +13,7 @@ HOMEPAGE="
 	https://github.com/texworld/tikzplotlib/
 	https://pypi.org/project/tikzplotlib/
 "
-SRC_URI="https://github.com/texworld/${PN}/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+SRC_URI="https://github.com/JasonGross/${PN}/archive/refs/tags/v${PV}.post13.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -35,14 +35,13 @@ BDEPEND="
 	)
 "
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-0.10.1-matplotlib-3.6.0.patch
-	"${FILESDIR}"/${PN}-0.10.1-matplotlib-3.7.0.patch
-	"${FILESDIR}"/fix_common_texification.patch
-)
-
 distutils_enable_tests pytest
 distutils_enable_sphinx doc dev-python/mock
+
+src_unpack() {
+    unpack ${P}.gh.tar.gz
+    mv ${WORKDIR}/${P}.post13 ${WORKDIR}/${P}
+}
 
 src_test() {
 	local -x MPLBACKEND=Agg
