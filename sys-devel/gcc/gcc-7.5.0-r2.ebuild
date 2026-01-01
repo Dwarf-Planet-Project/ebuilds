@@ -7,7 +7,9 @@ PATCH_VER="4"
 
 inherit toolchain-legacy
 
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86 ~ppc-macos"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
+
+IUSE=""
 
 RDEPEND=""
 DEPEND="${RDEPEND}

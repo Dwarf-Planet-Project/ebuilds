@@ -11,7 +11,7 @@ PIE_VER="2"
 SPECS_VER="0.2.0"
 SPECS_GCC_VER="4.4.3"
 # arch/libc configurations known to be stable with {PIE,SSP}-by-default
-PIE_GLIBC_STABLE="x86 amd64 mips ppc ppc64 arm ia64"
+PIE_GLIBC_STABLE="x86 amd64 mips ppc ppc64 arm"
 PIE_UCLIBC_STABLE="x86 arm amd64 mips ppc ppc64"
 SSP_STABLE="amd64 x86 mips ppc ppc64 arm"
 # uclibc need tls and nptl support for SSP support
@@ -21,7 +21,7 @@ SSP_UCLIBC_STABLE="x86 amd64 mips ppc ppc64 arm"
 
 inherit toolchain-legacy
 
-KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
