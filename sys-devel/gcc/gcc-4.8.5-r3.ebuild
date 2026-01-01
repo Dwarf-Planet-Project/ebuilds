@@ -40,7 +40,7 @@ src_prepare() {
 	fi
 
 	EPATCH_EXCLUDE+=" 02_all_gcc48_config.in.patch"
-	toolchain_src_prepare
+	toolchain-legacy_src_prepare
 
 	use vanilla && return 0
 	#Use -r1 for newer piepatchet that use DRIVER_SELF_SPECS for the hardened specs.
