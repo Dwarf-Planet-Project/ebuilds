@@ -1,7 +1,7 @@
 # Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="7"
+EAPI="8"
 
 PATCH_VER="1.5"
 UCLIBC_VER="1.0"
@@ -19,7 +19,7 @@ SSP_STABLE="amd64 x86 mips ppc ppc64 arm"
 SSP_UCLIBC_STABLE="x86 amd64 mips ppc ppc64 arm"
 #end Hardened stuff
 
-inherit eutils toolchain
+inherit toolchain-legacy
 
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
 
