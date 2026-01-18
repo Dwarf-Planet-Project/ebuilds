@@ -28,7 +28,7 @@ DEPEND="
 	app-arch/unzip"
 
 src_install() {
-	sed -e "/freepath=/s:=.*:=${EROOT}opt/${APP_NAME}:" -i freeplane.sh
+	sed -e "/freepath=/s:=.*:=${EROOT:/}opt/${APP_NAME}:" -i freeplane.sh
 	newbin freeplane.sh freeplane
 
 	# install icons
