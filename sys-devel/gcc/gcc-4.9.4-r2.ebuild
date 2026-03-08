@@ -42,6 +42,8 @@ src_prepare() {
 	# Bug 638056
 	eapply "${FILESDIR}/${P}-bootstrap.patch"
 
+	eapply "${FILESDIR}/gcc-4.9-modernize.patch"
+
 	toolchain-legacy_src_prepare
 
 	use vanilla && return 0

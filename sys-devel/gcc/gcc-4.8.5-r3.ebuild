@@ -18,13 +18,14 @@ SSP_STABLE="amd64 x86 mips ppc ppc64 arm"
 # uclibc need to be >= 0.9.33
 SSP_UCLIBC_STABLE="x86 amd64 mips ppc ppc64 arm"
 #end Hardened stuff
+IUSE+="altivec"
+STAGE1_CFLAGS+="-std=c++14"
 
 inherit toolchain-legacy
 
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~m68k ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
 
 RDEPEND=""
-IUSE="altivec"
 
 DEPEND="${RDEPEND}
 	elibc_glibc? ( >=sys-libs/glibc-2.8 )

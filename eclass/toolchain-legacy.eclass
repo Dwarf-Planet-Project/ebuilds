@@ -1820,10 +1820,10 @@ toolchain-legacy_src_install() {
 	# prune empty dirs left behind
 	find "${ED}" -depth -type d -delete 2>/dev/null
 
-	if ! is_crosscompile && [[ ${PN} != "kgcc64" ]] ; then
-		exeinto "${DATAPATH#${EPREFIX}}"
-		doexe "${FILESDIR}"/c{89,99} || die
-	fi
+	#if ! is_crosscompile && [[ ${PN} != "kgcc64" ]] ; then
+	#	exeinto "${DATAPATH#${EPREFIX}}"
+	#	doexe "${FILESDIR}"/c{89,99} || die
+	#fi
 
 	# libstdc++.la: Delete as it doesn't add anything useful: g++ itself
 	# handles linkage correctly in the dynamic & static case.  It also just

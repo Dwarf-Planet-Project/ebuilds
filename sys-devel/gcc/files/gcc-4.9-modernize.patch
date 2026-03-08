@@ -1,0 +1,25 @@
+diff --git a/gcc/gcc.c b/gcc/gcc.c
+index de82ee039..469a5eeed 100644
+--- a/gcc/gcc.c
++++ b/gcc/gcc.c
+@@ -42,7 +42,6 @@ compilation is specified by a string called a "spec".  */
+ #include "opts.h"
+ #include "params.h"
+ #include "vec.h"
+-#include "config/esp.h" /* for --enable-esp support */
+ #include "filenames.h"
+ 
+ /* By default there is no special suffix for target executables.  */
+diff --git a/gcc/reload.h b/gcc/reload.h
+index e3ec30ac8..0b4d162af 100644
+--- a/gcc/reload.h
++++ b/gcc/reload.h
+@@ -166,7 +166,7 @@ struct target_reload {
+      value indicates the level of indirect addressing supported, e.g., two
+      means that (MEM (MEM (REG n))) is also valid if (REG n) does not get
+      a hard register.  */
+-  unsigned char x_spill_indirect_levels;
++  int x_spill_indirect_levels;
+ 
+   /* True if caller-save has been reinitialized.  */
+   bool x_caller_save_initialized_p;
