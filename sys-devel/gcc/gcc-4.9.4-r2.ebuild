@@ -42,11 +42,12 @@ src_prepare() {
 	# Bug 638056
 	eapply "${FILESDIR}/${P}-bootstrap.patch"
 
-	eapply "${FILESDIR}/gcc-4.9-modernize.patch"
 
 	toolchain-legacy_src_prepare
 
 	use vanilla && return 0
 	# Use -r1 for newer piepatchet that use DRIVER_SELF_SPECS for the hardened specs.
 	[[ ${CHOST} == ${CTARGET} ]] && eapply "${FILESDIR}"/gcc-spec-env-r1.patch
+	
+	eapply "${FILESDIR}/gcc-4.9-modernize.patch"
 }
